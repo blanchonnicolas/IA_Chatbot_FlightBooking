@@ -1,0 +1,4 @@
+msrest==0.6.*
+PyJWT>=2.4.0
+botbuilder-schema==4.15.0
+msal==1.*

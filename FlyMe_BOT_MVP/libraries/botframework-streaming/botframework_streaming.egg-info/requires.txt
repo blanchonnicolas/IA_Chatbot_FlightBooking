@@ -1,0 +1,2 @@
+botbuilder-schema==4.15.0
+botframework-connector==4.15.0

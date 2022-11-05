@@ -1,0 +1,11 @@
+README.rst
+setup.py
+botbuilder/integration/applicationinsights/aiohttp/__init__.py
+botbuilder/integration/applicationinsights/aiohttp/about.py
+botbuilder/integration/applicationinsights/aiohttp/aiohttp_telemetry_middleware.py
+botbuilder/integration/applicationinsights/aiohttp/aiohttp_telemetry_processor.py
+botbuilder_integration_applicationinsights_aiohttp.egg-info/PKG-INFO
+botbuilder_integration_applicationinsights_aiohttp.egg-info/SOURCES.txt
+botbuilder_integration_applicationinsights_aiohttp.egg-info/dependency_links.txt
+botbuilder_integration_applicationinsights_aiohttp.egg-info/requires.txt
+botbuilder_integration_applicationinsights_aiohttp.egg-info/top_level.txt

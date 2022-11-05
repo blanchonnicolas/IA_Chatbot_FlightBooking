@@ -1,0 +1,82 @@
+{
+ "luis_schema_version": "3.2.0",
+ "versionId": "0.1",
+ "name": "Airline Reservation",
+ "desc": "A LUIS model that uses intent and entities.",
+ "culture": "en-us",
+ "tokenizerVersion": "1.0.0",
+ "intents": [
+  {
+   "name": "Book flight"
+  },
+  {
+   "name": "Cancel"
+  },
+  {
+   "name": "None"
+  }
+ ],
+ "entities": [],
+ "composites": [
+  {
+   "name": "or_city",
+   "children": [
+    "Airport"
+   ],
+   "roles": []
+  },
+  {
+   "name": "dst_city",
+   "children": [
+    "Airport"
+   ],
+   "roles": []
+  }
+ ],
+ "closedLists": [
+  {
+   "name": "Airport",
+   "subLists": [
+    {
+     "canonicalForm": "Paris",
+     "list": [
+      "paris"
+     ]
+    },
+    {
+     "canonicalForm": "London",
+     "list": [
+      "london"
+     ]
+    },
+    {
+     "canonicalForm": "Berlin",
+     "list": [
+      "berlin"
+     ]
+    },
+    {
+     "canonicalForm": "New York",
+     "list": [
+      "new york"
+     ]
+    }
+   ],
+   "roles": []
+  }
+ ],
+ "patternAnyEntities": [],
+ "regex_entities": [],
+ "prebuiltEntities": [
+  {
+   "name": "datetimeV2",
+   "roles": []
+  }
+ ],
+ "model_features": [],
+ "regex_features": [],
+ "patterns": [],
+ "utterances": [
+ ],
+ "settings": []
+}

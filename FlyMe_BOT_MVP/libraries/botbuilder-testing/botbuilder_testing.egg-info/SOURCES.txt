@@ -1,0 +1,12 @@
+README.rst
+setup.py
+botbuilder/testing/__init__.py
+botbuilder/testing/about.py
+botbuilder/testing/dialog_test_client.py
+botbuilder/testing/dialog_test_logger.py
+botbuilder/testing/storage_base_tests.py
+botbuilder_testing.egg-info/PKG-INFO
+botbuilder_testing.egg-info/SOURCES.txt
+botbuilder_testing.egg-info/dependency_links.txt
+botbuilder_testing.egg-info/requires.txt
+botbuilder_testing.egg-info/top_level.txt

@@ -1,0 +1,14 @@
+README.rst
+setup.cfg
+setup.py
+botbuilder/azure/__init__.py
+botbuilder/azure/about.py
+botbuilder/azure/azure_queue_storage.py
+botbuilder/azure/blob_storage.py
+botbuilder/azure/cosmosdb_partitioned_storage.py
+botbuilder/azure/cosmosdb_storage.py
+botbuilder_azure.egg-info/PKG-INFO
+botbuilder_azure.egg-info/SOURCES.txt
+botbuilder_azure.egg-info/dependency_links.txt
+botbuilder_azure.egg-info/requires.txt
+botbuilder_azure.egg-info/top_level.txt

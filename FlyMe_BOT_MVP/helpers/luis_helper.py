@@ -10,9 +10,9 @@ from booking_details import BookingDetails
 
 class Intent(Enum):
     BOOK_FLIGHT = "Book_flight"
-    CANCEL = "Cancel"
-    GET_WEATHER = "GetWeather"
-    NONE_INTENT = "NoneIntent"
+    #CANCEL = "Cancel"
+    #GET_WEATHER = "GetWeather"
+    NONE_INTENT = "None"
 
 
 def top_intent(intents: Dict[Intent, dict]) -> TopIntent:
@@ -94,18 +94,31 @@ class LuisHelper:
                 # This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop
                 # the Time part. TIMEX is a format that represents DateTime expressions that include some ambiguity.
                 # e.g. missing a Year.
-                str_date_entities = recognizer_result.entities.get("datetime", [])
-                
+                str_date_entities = recognizer_result.entities.get("$instance", {}).get(
+                    "str_date", []
+                )
                 if len(str_date_entities) > 0:
                     if recognizer_result.entities["str_date"]:
                         result.str_date = str_date_entities[0]["text"]
 
+                # str_date_entities = recognizer_result.entities.get("datetime", [])   
+                # if len(str_date_entities) > 0:
+                #     if recognizer_result.entities["str_date"]:
+                #         result.str_date = str_date_entities[0]["text"]
+
 
                 #Entity end_date
-                end_date_entities = recognizer_result.entities.get("datetime", [])
+                end_date_entities = recognizer_result.entities.get("$instance", {}).get(
+                    "end_date", []
+                )
                 if len(end_date_entities) > 0:
                     if recognizer_result.entities["end_date"]:
                         result.end_date = end_date_entities[0]["text"]
+
+                # end_date_entities = recognizer_result.entities.get("datetime", [])
+                # if len(end_date_entities) > 0:
+                #     if recognizer_result.entities["end_date"]:
+                #         result.end_date = end_date_entities[0]["text"]
                 
                 #Entity travel_date
                 date_entities = recognizer_result.entities.get("datetime", [])

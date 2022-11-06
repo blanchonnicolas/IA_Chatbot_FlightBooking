@@ -11,7 +11,7 @@ class BookingDetails:
         str_date: str = None,
         end_date: str = None,
         travel_date: str = None,
-        unsupported_airports=None,
+        unsupported_airports=None, #To be removed
     ):
         if unsupported_airports is None:
             unsupported_airports = []
@@ -21,4 +21,4 @@ class BookingDetails:
         self.str_date = str_date
         self.end_date = end_date
         self.travel_date = travel_date
-        self.unsupported_airports = unsupported_airports
+        self.unsupported_airports = unsupported_airports #To be removed

@@ -60,74 +60,77 @@ class LuisHelper:
                     "To", []
                 )
                 if len(to_entities) > 0:
-                    if recognizer_result.entities.get("To", [{"$instance": {}}])[0][
-                        "$instance"
-                    ]:
-                        result.destination = to_entities[0]["text"].capitalize()
-                    else:
-                        result.unsupported_airports.append(
-                            to_entities[0]["text"].capitalize()
-                        )
+                    result.destination = to_entities[0]["text"].capitalize()
+                    # if recognizer_result.entities.get("To", [{"$instance": {}}])[0][
+                    #     "$instance"
+                    # ]:
+                    #     result.destination = to_entities[0]["text"].capitalize()
+                    # else:
+                    #     result.unsupported_airports.append(
+                    #         to_entities[0]["text"].capitalize()
+                    #     )
                 #Entity From Origin
                 from_entities = recognizer_result.entities.get("$instance", {}).get(
                     "From", []
                 )
                 if len(from_entities) > 0:
-                    if recognizer_result.entities.get("From", [{"$instance": {}}])[0][
-                        "$instance"
-                    ]:
-                        result.origin = from_entities[0]["text"].capitalize()
-                    else:
-                        result.unsupported_airports.append(
-                            from_entities[0]["text"].capitalize()
-                        )
+                    result.origin = from_entities[0]["text"].capitalize()
+                    # if recognizer_result.entities.get("From", [{"$instance": {}}])[0][
+                    #     "$instance"
+                    # ]:
+                    #     result.origin = from_entities[0]["text"].capitalize()
+                    # else:
+                    #     result.unsupported_airports.append(
+                    #         from_entities[0]["text"].capitalize()
+                    #     )
                 #Entity budget
                 budget_entities = recognizer_result.entities.get("$instance", {}).get(
                     "budget", []
                 )
                 if len(budget_entities) > 0:
-                    if recognizer_result.entities.get("budget", [{"$instance": {}}])[0][
-                        "$instance"
-                    ]:
-                        result.budget = budget_entities[0]["text"]
+                    result.budget = budget_entities[0]["text"]
+                    # if recognizer_result.entities.get("budget", [{"$instance": {}}])[0][
+                    #     "$instance"
+                    # ]:
+                    #     result.budget = budget_entities[0]["text"]
                 #Entity start_date
                 # This value will be a TIMEX. And we are only interested in a Date so grab the first result and drop
                 # the Time part. TIMEX is a format that represents DateTime expressions that include some ambiguity.
                 # e.g. missing a Year.
-                str_date_entities = recognizer_result.entities.get("$instance", {}).get(
-                    "str_date", []
-                )
+
+
+                # str_date_entities = recognizer_result.entities.get("$instance", {}).get(
+                #     "str_date", []
+                # )
+                # if len(str_date_entities) > 0:
+                #     result.str_date = str_date_entities[0]["text"]
+
+                str_date_entities = recognizer_result.entities.get("datetime", [])   
                 if len(str_date_entities) > 0:
                     if recognizer_result.entities["str_date"]:
                         result.str_date = str_date_entities[0]["text"]
 
-                # str_date_entities = recognizer_result.entities.get("datetime", [])   
-                # if len(str_date_entities) > 0:
-                #     if recognizer_result.entities["str_date"]:
-                #         result.str_date = str_date_entities[0]["text"]
-
 
                 #Entity end_date
-                end_date_entities = recognizer_result.entities.get("$instance", {}).get(
-                    "end_date", []
-                )
+                # end_date_entities = recognizer_result.entities.get("$instance", {}).get(
+                #     "end_date", []
+                # )
+                # if len(end_date_entities) > 0:
+                #     result.end_date = end_date_entities[0]["text"]
+                #     # if recognizer_result.entities["end_date"]:
+                #     #     result.end_date = end_date_entities[0]["text"]
+
+                end_date_entities = recognizer_result.entities.get("datetime", [])
                 if len(end_date_entities) > 0:
                     if recognizer_result.entities["end_date"]:
                         result.end_date = end_date_entities[0]["text"]
-
-                # end_date_entities = recognizer_result.entities.get("datetime", [])
-                # if len(end_date_entities) > 0:
-                #     if recognizer_result.entities["end_date"]:
-                #         result.end_date = end_date_entities[0]["text"]
                 
                 #Entity travel_date
                 date_entities = recognizer_result.entities.get("datetime", [])
                 if date_entities:
                     timex = date_entities[0]["timex"]
-
                     if timex:
                         datetime = timex[0].split("T")[0]
-
                         result.travel_date = datetime
                 else:
                     result.travel_date = None

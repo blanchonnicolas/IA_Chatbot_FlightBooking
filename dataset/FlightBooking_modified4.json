@@ -1,6 +1,6 @@
 {
  "luis_schema_version": "3.2.0",
- "versionId": "0.1",
+ "versionId": "0.2",
  "name": "FlyMe_BOT_MVP",
  "desc": "A LUIS model that uses intent and entities.",
  "culture": "en-us",
@@ -8,6 +8,9 @@
  "intents": [
   {
    "name": "Book flight"
+  },
+  {
+   "name": "Greeting"
   }
  ],
  "entities": [
@@ -190,8 +193,24 @@
   },
   {
    "text": "Hello, I would like to book a 2-week trip leaving from Melbourne on August 27. I would like to go to Mannheim.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 55,
+     "endPos": 63
+    },
+    {
+     "entity": "To",
+     "startPos": 101,
+     "endPos": 108
+    },
+    {
+     "entity": "str_date",
+     "startPos": 68,
+     "endPos": 76
+    }
+   ]
   },
   {
    "text": "Hello, I am planning to book a trip to pittsborgh",
@@ -792,7 +811,7 @@
   },
   {
    "text": "Hi!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -824,8 +843,24 @@
   },
   {
    "text": "Hi! I'd like to go to Boston from Mos Eisley on August 15th.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 34,
+     "endPos": 43
+    },
+    {
+     "entity": "To",
+     "startPos": 22,
+     "endPos": 27
+    },
+    {
+     "entity": "str_date",
+     "startPos": 48,
+     "endPos": 58
+    }
+   ]
   },
   {
    "text": "Hi im looking to make a quick trip im from tampa and want to go to Dallas",
@@ -908,7 +943,7 @@
   },
   {
    "text": "Heyo!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -945,7 +980,7 @@
   },
   {
    "text": "Good morning.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -972,7 +1007,7 @@
   },
   {
    "text": "Hi. I am in dire need of a vacation.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -1003,7 +1038,7 @@
   },
   {
    "text": "Hi! I'd like to do some vacation shopping!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -1066,7 +1101,7 @@
   },
   {
    "text": "Hello wozbot!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -1661,13 +1696,24 @@
   },
   {
    "text": "ay whats up?",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Good morning.  We are planning a family reunion and since we are spread out all over the world, we have decided on a couple of possibilities. Can you please give me information on packages available in Fukuoka? My husband and I would be leaving from Manaus and we will be travelling with our 4 children.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 250,
+     "endPos": 255
+    },
+    {
+     "entity": "To",
+     "startPos": 202,
+     "endPos": 208
+    }
+   ]
   },
   {
    "text": "hi im in mannheim and want to spend a week away",
@@ -1682,8 +1728,29 @@
   },
   {
    "text": "Hi. I'd like to find a trip to San Diego. I can leave from Belo Horizonte. I'd like to travel between August 27th and August 31st if possible. My dates are flexible.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 59,
+     "endPos": 72
+    },
+    {
+     "entity": "To",
+     "startPos": 31,
+     "endPos": 39
+    },
+    {
+     "entity": "str_date",
+     "startPos": 102,
+     "endPos": 112
+    },
+    {
+     "entity": "end_date",
+     "startPos": 118,
+     "endPos": 128
+    }
+   ]
   },
   {
    "text": "Hi! I'm getting married and we are super tight on money but I want to be able to give my new bride the best possible honeymoon despite our tight budget, do you have any cool honeymoon destinations that you can recommend?",
@@ -1730,8 +1797,19 @@
   },
   {
    "text": "Hello. i want to go to buenos aires\ni live in puebla",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 46,
+     "endPos": 51
+    },
+    {
+     "entity": "To",
+     "startPos": 23,
+     "endPos": 34
+    }
+   ]
   },
   {
    "text": "I'd like to book a trip from Chicago to San Diego between August 26th and September 5th.",
@@ -1761,13 +1839,24 @@
   },
   {
    "text": "hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi, I'm a very interesting person from Stuttgart and I need to get myself to Sapporo. I am traveling with a friend.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 39,
+     "endPos": 47
+    },
+    {
+     "entity": "To",
+     "startPos": 77,
+     "endPos": 83
+    }
+   ]
   },
   {
    "text": "Hello, I want to book a trip to Coruscant.",
@@ -1884,18 +1973,35 @@
   },
   {
    "text": "hey there, I'm doing some travelling for business soon. It needs to be around August 18-August 26. What can you do for me?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 78,
+     "endPos": 86
+    },
+    {
+     "entity": "end_date",
+     "startPos": 88,
+     "endPos": 96
+    }
+   ]
   },
   {
    "text": "me again... I'm still burnt out from work",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi! I'd really like to try and book a trip for me and 3 of my friends for spring break.  I have a budget of $2100.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "budget",
+     "startPos": 109,
+     "endPos": 112
+    }
+   ]
   },
   {
    "text": "Hey, I'm looking to book my honeymoon from Houston to Santo Domingo for a week on August 26th. My budget is 1500.",
@@ -1963,13 +2069,40 @@
   },
   {
    "text": "hi my wife and i wanna bring our 7 little lads n lassies to kochi leaving from san diego  we can spend 28500 ",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 79,
+     "endPos": 87
+    },
+    {
+     "entity": "To",
+     "startPos": 60,
+     "endPos": 64
+    },
+    {
+     "entity": "budget",
+     "startPos": 103,
+     "endPos": 107
+    }
+   ]
   },
   {
    "text": "hi i need to get to mexico please find me a flight from punta cana",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 56,
+     "endPos": 65
+    },
+    {
+     "entity": "To",
+     "startPos": 20,
+     "endPos": 25
+    }
+   ]
   },
   {
    "text": "I'm looking to book a trip to Fukuoka from Mannheim leaving on August 27th for my honeymoon.",
@@ -2274,8 +2407,24 @@
   },
   {
    "text": "hello hello i am travelling with my 9 sisters and my child to our family reunion in Corsucant next month! we will spend 1800 max, what can you do?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 84,
+     "endPos": 92
+    },
+    {
+     "entity": "str_date",
+     "startPos": 94,
+     "endPos": 103
+    },
+    {
+     "entity": "budget",
+     "startPos": 120,
+     "endPos": 123
+    }
+   ]
   },
   {
    "text": "hey im looking to check out fortaleza. im leaving from sapporo on august 27",
@@ -2390,7 +2539,7 @@
   },
   {
    "text": "hey",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -2561,7 +2710,7 @@
   },
   {
    "text": "hello hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -2577,7 +2726,7 @@
   },
   {
    "text": "HEY",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -2620,13 +2769,19 @@
   },
   {
    "text": "haayyyyy",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hiiiii there. I have an interview in Burlington!!!! Can you get me there?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 37,
+     "endPos": 46
+    }
+   ]
   },
   {
    "text": "whats available in atlanta starting august 30th? we're leaving from north vancouver",
@@ -2704,18 +2859,45 @@
   },
   {
    "text": "hey dude. ive benn in ulsan for 2 years now with no break from work\ni wanna go back to calgary and visit the fam.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 22,
+     "endPos": 26
+    },
+    {
+     "entity": "To",
+     "startPos": 87,
+     "endPos": 93
+    }
+   ]
   },
   {
    "text": "Hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi there! Can you find me a trip to Kingston between August 25 and September 4?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 36,
+     "endPos": 43
+    },
+    {
+     "entity": "str_date",
+     "startPos": 53,
+     "endPos": 61
+    },
+    {
+     "entity": "end_date",
+     "startPos": 67,
+     "endPos": 77
+    }
+   ]
   },
   {
    "text": "Hi! I'm looking to book a business trip between August 26 and September 12. There's a few places I have in mind. Lets start with Rio de Janeiro.",
@@ -2740,8 +2922,19 @@
   },
   {
    "text": "hey there how are you i am chef\nfor pastry cake. i want go to coruscant\nlive sydney\npls help me thx\nneed to try cookie\ngood there",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 77,
+     "endPos": 82
+    },
+    {
+     "entity": "To",
+     "startPos": 62,
+     "endPos": 70
+    }
+   ]
   },
   {
    "text": "Hi. I need to get away stat.",
@@ -2766,7 +2959,7 @@
   },
   {
    "text": "hey",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -2904,8 +3097,24 @@
   },
   {
    "text": "HELLO THERE I AM IN MILAN AND LOOKING TO TRAVEL TO SANTO DOMINGO ON WEDNESDAY AUGUST 24. SORRY FOR ALL THE YELLING I'M IN A HELICOPTER",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 20,
+     "endPos": 24
+    },
+    {
+     "entity": "To",
+     "startPos": 51,
+     "endPos": 63
+    },
+    {
+     "entity": "str_date",
+     "startPos": 68,
+     "endPos": 86
+    }
+   ]
   },
   {
    "text": "Hi there! What kind of packages do you have available to Santos from Leon?",
@@ -2956,8 +3165,19 @@
   },
   {
    "text": "Good day sire. I would like to book a recreational stay between August 17 and September 3. What has thou to offer?",
-   "intent": null,
-   "entities": []
+   "intent": "Greeting",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 64,
+     "endPos": 72
+    },
+    {
+     "entity": "end_date",
+     "startPos": 78,
+     "endPos": 88
+    }
+   ]
   },
   {
    "text": "oh man oh man\ni am so fed up with work\ni cant wait til 5 oclock. but i need a vacation",
@@ -3017,17 +3237,6 @@
    "text": "Hi! I need to book an emergency trip for 10 adults and 14 children!",
    "intent": "Book flight",
    "entities": []
-  },
-  {
-   "text": "Hi there! I only have 5 days of vacation, and I want to do the best I can with it! Can you recommend packages starting August 30th?",
-   "intent": null,
-   "entities": [
-    {
-     "entity": "str_date",
-     "startPos": 119,
-     "endPos": 129
-    }
-   ]
   },
   {
    "text": "hay i am doing some business globetrotting just me and a colleague. we need to get to Fukuoka some time between august 27 and september 6",
@@ -3115,17 +3324,6 @@
    ]
   },
   {
-   "text": "Hi I only have 4000 dollars",
-   "intent": null,
-   "entities": [
-    {
-     "entity": "budget",
-     "startPos": 15,
-     "endPos": 18
-    }
-   ]
-  },
-  {
    "text": "a vacatoin",
    "intent": "Book flight",
    "entities": []
@@ -3164,7 +3362,7 @@
   },
   {
    "text": "Hello :slightly_smiling_face:",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -3223,8 +3421,19 @@
   },
   {
    "text": "Greetings m8! Im coming out of st. petersburg, but i need some time for my lonesome or at least imagine some, can you tell me about some packages to Kingston",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 31,
+     "endPos": 44
+    },
+    {
+     "entity": "To",
+     "startPos": 149,
+     "endPos": 156
+    }
+   ]
   },
   {
    "text": "I'm getting married and my wife is making me take care of the honeymoon, I better get it right or I will be in a lot of hot water :weary:",
@@ -3712,8 +3921,14 @@
   },
   {
    "text": "Hi! I need to get over to Rome",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 26,
+     "endPos": 29
+    }
+   ]
   },
   {
    "text": "my friends and i are going away on our first trip alone ever and i am in charge of finding us a deal!",
@@ -3956,7 +4171,7 @@
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4092,8 +4307,19 @@
   },
   {
    "text": "hi. i have a 6 days vacation. starting friday sept 2 2016. and id like to go to paris",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 80,
+     "endPos": 84
+    },
+    {
+     "entity": "str_date",
+     "startPos": 39,
+     "endPos": 56
+    }
+   ]
   },
   {
    "text": "hi there. need to book a trip to denver\ni live in houston\nsept 10 to 11",
@@ -4243,23 +4469,66 @@
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hello bot. I want to go to Manas from Boston on September 2",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 38,
+     "endPos": 43
+    },
+    {
+     "entity": "To",
+     "startPos": 27,
+     "endPos": 31
+    },
+    {
+     "entity": "str_date",
+     "startPos": 48,
+     "endPos": 58
+    }
+   ]
   },
   {
    "text": "Hello there! I have 12 days off starting on August 22, and I'm leaving from Santo Domingo",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 76,
+     "endPos": 88
+    },
+    {
+     "entity": "str_date",
+     "startPos": 44,
+     "endPos": 52
+    }
+   ]
   },
   {
    "text": "hey, I want to get myself to Porto Alegre from Toronto for less than $3900",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 47,
+     "endPos": 53
+    },
+    {
+     "entity": "To",
+     "startPos": 29,
+     "endPos": 40
+    },
+    {
+     "entity": "budget",
+     "startPos": 70,
+     "endPos": 73
+    }
+   ]
   },
   {
    "text": "hey. i wanna go from birmingham",
@@ -4316,7 +4585,7 @@
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4363,7 +4632,7 @@
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4373,7 +4642,7 @@
   },
   {
    "text": "helllo",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4415,12 +4684,33 @@
   },
   {
    "text": "Hello hello :slightly_smiling_face: I'm planning a honeymoon, and I want to go to Kabul from Toronto\nDo you have anything for me leaving on August 28th?\n13 days if possible\ngot $3300 to spend",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 93,
+     "endPos": 99
+    },
+    {
+     "entity": "To",
+     "startPos": 82,
+     "endPos": 86
+    },
+    {
+     "entity": "str_date",
+     "startPos": 140,
+     "endPos": 150
+    },
+    {
+     "entity": "budget",
+     "startPos": 178,
+     "endPos": 181
+    }
+   ]
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4431,17 +4721,6 @@
      "entity": "From",
      "startPos": 46,
      "endPos": 50
-    }
-   ]
-  },
-  {
-   "text": "Hi there, I'm looking to book a trip for a week starting this Wednesday. We are two adults and seven kids",
-   "intent": null,
-   "entities": [
-    {
-     "entity": "str_date",
-     "startPos": 62,
-     "endPos": 70
     }
    ]
   },
@@ -4473,7 +4752,7 @@
   },
   {
    "text": "Greetings, my name is Harold. My grandson told me that I can book a flight by talking to a robot over the World Wide Web - I could hardly believe my ears! Back in my day, you had to saunter over to the local travel agency and wait in line to talk to an agent.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -4635,8 +4914,24 @@
   },
   {
    "text": "hello I id like to go to manaus from ciudad juarez. 4,600$",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 37,
+     "endPos": 49
+    },
+    {
+     "entity": "To",
+     "startPos": 25,
+     "endPos": 30
+    },
+    {
+     "entity": "budget",
+     "startPos": 52,
+     "endPos": 56
+    }
+   ]
   },
   {
    "text": "Can you check if there are any flights from Curitiba to Pittsburgh departing on Sept 2?",
@@ -4661,8 +4956,19 @@
   },
   {
    "text": "One ticket from Atlanta to Tofino please",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 16,
+     "endPos": 22
+    },
+    {
+     "entity": "To",
+     "startPos": 27,
+     "endPos": 32
+    }
+   ]
   },
   {
    "text": "Hello there, I'd like to book a vacation for my best friends and myself. I live and work in St. Petersburg, and I've been wanting to get out of the city with my buddies for a long time now :slightly_smiling_face:",
@@ -4730,8 +5036,19 @@
   },
   {
    "text": "Hi, can you please tell me how much would it cost to for two adults and a child to go from Seoul to Naples for five days?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 91,
+     "endPos": 95
+    },
+    {
+     "entity": "To",
+     "startPos": 100,
+     "endPos": 105
+    }
+   ]
   },
   {
    "text": "Yes hi! I live in Santos and I want to book a holiday of up to 16 days. Do you have any trips I can take that fit within a budget of 0$?",
@@ -4751,22 +5068,22 @@
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hello, anybody there?",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hello,",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hello! I'm looking to take my family on vacation soon, and wanted to get a sense of prices",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -4861,22 +5178,48 @@
   },
   {
    "text": "hi. I want to go to Tofino from Burlington. please recommend me packages from Sunday 21 to August 24 for 2200 for 7 adults.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 32,
+     "endPos": 41
+    },
+    {
+     "entity": "To",
+     "startPos": 20,
+     "endPos": 25
+    },
+    {
+     "entity": "str_date",
+     "startPos": 78,
+     "endPos": 86
+    },
+    {
+     "entity": "end_date",
+     "startPos": 91,
+     "endPos": 99
+    },
+    {
+     "entity": "budget",
+     "startPos": 105,
+     "endPos": 108
+    }
+   ]
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hey",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4934,7 +5277,7 @@
   },
   {
    "text": "Heyooooo",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -4987,7 +5330,7 @@
   },
   {
    "text": "suh",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -5141,8 +5484,29 @@
   },
   {
    "text": "Hi. Need to get to Sapporo\nLeaving Baltimore\nSept 9-13\nBetween those dates. Not flexible.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 35,
+     "endPos": 43
+    },
+    {
+     "entity": "To",
+     "startPos": 19,
+     "endPos": 25
+    },
+    {
+     "entity": "str_date",
+     "startPos": 45,
+     "endPos": 50
+    },
+    {
+     "entity": "end_date",
+     "startPos": 52,
+     "endPos": 53
+    }
+   ]
   },
   {
    "text": "Hello. I haven\u2019t left Kingston Ontario in years, and I have 4900 left.\nI don\u2019t think I could even take a trip to Kobe for that price.. but would you let me know? I wish I could just go to Kobe but I have no vacation days left because I had to take them all to care for my sick dog",
@@ -5183,7 +5547,7 @@
   },
   {
    "text": "Hey there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -5220,7 +5584,7 @@
   },
   {
    "text": "sup ",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -5300,8 +5664,24 @@
   },
   {
    "text": "Look, I've got to get myself out of Santiago My friend and I would like to try and see Denver We want a 5 start hotel, too. Can you get us a trip that ends August 31st?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 36,
+     "endPos": 43
+    },
+    {
+     "entity": "To",
+     "startPos": 87,
+     "endPos": 92
+    },
+    {
+     "entity": "end_date",
+     "startPos": 156,
+     "endPos": 166
+    }
+   ]
   },
   {
    "text": "Hey I have an internship abroad I need to check some things out. I\u2019m leaving Kochi September 8 at the earliest.. What\u2019s available in Naples?",
@@ -5337,8 +5717,19 @@
   },
   {
    "text": "hi. i need a vacation. im in berlin and wondering about trips to milan",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 29,
+     "endPos": 34
+    },
+    {
+     "entity": "To",
+     "startPos": 65,
+     "endPos": 69
+    }
+   ]
   },
   {
    "text": "My brother and I both recently divorced our spouses and we want to take our 7 children away from all the drama for a bit. Do you have a fun package destination after August 31st? Something like the Atlantis?",
@@ -5656,7 +6047,7 @@
   },
   {
    "text": "spring break gurl whats up yaassss",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -5682,12 +6073,33 @@
   },
   {
    "text": "Hi there, I'm on vacation from Aug 30 to Sep 4 and I wanted to know where I can go on my $4600 budget. I live in Dallas btw",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 113,
+     "endPos": 118
+    },
+    {
+     "entity": "str_date",
+     "startPos": 31,
+     "endPos": 36
+    },
+    {
+     "entity": "end_date",
+     "startPos": 41,
+     "endPos": 45
+    },
+    {
+     "entity": "budget",
+     "startPos": 90,
+     "endPos": 93
+    }
+   ]
   },
   {
    "text": "Hi! I need to find a package that will allow me to get to an internship I've been offered. There are several cities I could go to and I haven't made up my mind up yet, can you help me compare the options?",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -5735,7 +6147,7 @@
   },
   {
    "text": "Hi!!! I really need your help! I'm getting married in a week and with everything going on I haven't had time to book a honeymoon trip yet",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -5745,13 +6157,24 @@
   },
   {
    "text": "Yo dude.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi there :slightly_smiling_face: I just managed to get my boss to agree to a HUGE vacation time slot!! I am so excited to do some traveling. I'm traveling from Hamburg and I have a few cities I'm thinking of seeing...\nDo you have packages to Tijuana?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 160,
+     "endPos": 166
+    },
+    {
+     "entity": "To",
+     "startPos": 242,
+     "endPos": 248
+    }
+   ]
   },
   {
    "text": "I want to dream of a better life and pretend I have money and vacation days left. Can you check packages from Queenstown to LA?",
@@ -5912,8 +6335,14 @@
   },
   {
    "text": "Hi there...this is my first time traveling and I'm so excited! I've lived in Boston all my life and want to see the world",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 77,
+     "endPos": 82
+    }
+   ]
   },
   {
    "text": "I'd like to find a vacation from Kabul to Santiago for 1800. I dont care when i go and it's just me traveling",
@@ -5954,8 +6383,29 @@
   },
   {
    "text": "Good afternoon! I would like to inquire about travel options between several cities. The trip would need to be between September 8th and 17th. The first option would be between Stuttgart and Baltimore.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 177,
+     "endPos": 185
+    },
+    {
+     "entity": "To",
+     "startPos": 191,
+     "endPos": 199
+    },
+    {
+     "entity": "str_date",
+     "startPos": 119,
+     "endPos": 131
+    },
+    {
+     "entity": "end_date",
+     "startPos": 137,
+     "endPos": 140
+    }
+   ]
   },
   {
    "text": "I need to go to San Jose between August 27 and September 5. Leaving from Goiania",
@@ -6043,8 +6493,14 @@
   },
   {
    "text": "Hey man! I just finished school!!!! Yes I know, I graduated, who would have ever imagined that? haha haters gonna hate, it took me 7 years but i'm done with uniiii. Anyways, I wanna go somewhere starting August 27th. I can be gone for 10 days before starting work",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 204,
+     "endPos": 214
+    }
+   ]
   },
   {
    "text": "GET ME A FLIGHT FROM BARCELONA TO CALGARY LEAVE SEPTEMBER 2",
@@ -6205,13 +6661,29 @@
   },
   {
    "text": "Howdy! So how does this work? I'm not too good with technology, I'm more of a pen and paper kind of guy",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi, I'd like to go to Seattle from Manaus. I will be with 4 other adults and my 5 children will be coming along as well. I am willing to pay 34800, i will increase that price if needed.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 35,
+     "endPos": 40
+    },
+    {
+     "entity": "To",
+     "startPos": 22,
+     "endPos": 28
+    },
+    {
+     "entity": "budget",
+     "startPos": 141,
+     "endPos": 145
+    }
+   ]
   },
   {
    "text": "I'd like to go to Melbourne from Manaus",
@@ -6331,8 +6803,14 @@
   },
   {
    "text": "hi there, i'm having my dream wedding this Saturday and I want to have a dream honeymoon right after :slightly_smiling_face: :slightly_smiling_face:",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 38,
+     "endPos": 50
+    }
+   ]
   },
   {
    "text": "I need to get a pic of Madonna and her pal, they are going to be in Kobe and I want to leave from Queenstown",
@@ -6546,17 +7024,28 @@
   },
   {
    "text": "get me from Buenos Aires to the nicest hotel in Punta Cana. And I mean ASAP!!!!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 12,
+     "endPos": 23
+    },
+    {
+     "entity": "To",
+     "startPos": 48,
+     "endPos": 57
+    }
+   ]
   },
   {
    "text": "Hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hey how are you?",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -6603,8 +7092,14 @@
   },
   {
    "text": "Hi there, I'm coming up on the 10th anniversary with my lady, and I thought I'd treat her and I to something special this year. Boston is where I call home, and I thought it sure would be nice to get out of town for a change\nWhat destinations are on offer from my city?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 128,
+     "endPos": 133
+    }
+   ]
   },
   {
    "text": "I wanna go to la paz from toluca",
@@ -6624,12 +7119,18 @@
   },
   {
    "text": "Good day. I live in Kabul and I want to take my extended family on a holiday",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 20,
+     "endPos": 24
+    }
+   ]
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -6713,8 +7214,14 @@
   },
   {
    "text": "hi i need to get to mexico city",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 20,
+     "endPos": 30
+    }
+   ]
   },
   {
    "text": "So I live in Long Beach. What do you have for Cairo?",
@@ -7097,7 +7604,7 @@
   },
   {
    "text": "Hi there,",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -7118,7 +7625,7 @@
   },
   {
    "text": "Hey there, sooo I\u2019m in a bit of a bind where I\u2019m getting married next week and have yet to book a honeymoon..",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -7139,13 +7646,34 @@
   },
   {
    "text": "hello.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi there, I\u2019m off between August 25 and September 11. I saved up 4000 for a nice trip. If I flew out from San Francisco, what are your suggestions for where I can go?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 106,
+     "endPos": 118
+    },
+    {
+     "entity": "str_date",
+     "startPos": 26,
+     "endPos": 34
+    },
+    {
+     "entity": "end_date",
+     "startPos": 40,
+     "endPos": 51
+    },
+    {
+     "entity": "budget",
+     "startPos": 65,
+     "endPos": 68
+    }
+   ]
   },
   {
    "text": "Hi there. I need exact dates for this one, no flexibility\nFrankfurt to Punta Cana\nSept 11-15\nYou got that?",
@@ -7175,13 +7703,40 @@
   },
   {
    "text": "Hi. Well I\u2019m trying to treat myself with a vacatoin. I\u2019m thinking of going to Chicago. Leaving form Seattle",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 100,
+     "endPos": 106
+    },
+    {
+     "entity": "To",
+     "startPos": 78,
+     "endPos": 84
+    }
+   ]
   },
   {
    "text": "Hi there I have a very important request to make today I need to get from Essen to Porto Alegre on August 28 or some point thereafter. But most importantly I need you to book me the best hotel in Porto",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 74,
+     "endPos": 78
+    },
+    {
+     "entity": "To",
+     "startPos": 83,
+     "endPos": 94
+    },
+    {
+     "entity": "str_date",
+     "startPos": 99,
+     "endPos": 107
+    }
+   ]
   },
   {
    "text": "You got any flights from New York to Naples departing Aug 27 returning Sep 15?",
@@ -7211,8 +7766,29 @@
   },
   {
    "text": "yo. im from burlington. want to travel somewhere cool with my bro. between sept 8 and sept 18. you got flights to kingston?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 12,
+     "endPos": 21
+    },
+    {
+     "entity": "To",
+     "startPos": 114,
+     "endPos": 121
+    },
+    {
+     "entity": "str_date",
+     "startPos": 75,
+     "endPos": 80
+    },
+    {
+     "entity": "end_date",
+     "startPos": 86,
+     "endPos": 92
+    }
+   ]
   },
   {
    "text": "can you get me a trip to pittsburgh, from barcelona? between sep 3 and 18",
@@ -7242,22 +7818,80 @@
   },
   {
    "text": "Hi there! So, between September 7 and 27 I would like to see what is available from Curitiba to Mexico City",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 84,
+     "endPos": 91
+    },
+    {
+     "entity": "To",
+     "startPos": 96,
+     "endPos": 106
+    },
+    {
+     "entity": "str_date",
+     "startPos": 22,
+     "endPos": 32
+    },
+    {
+     "entity": "end_date",
+     "startPos": 38,
+     "endPos": 39
+    }
+   ]
   },
   {
    "text": "Hi there. I have been tasked with bringing my big beautiful family on a trip! We need to go between August 30 and September 20. We've got 13100 dollars to spend and are leaving from Dublin. Lets hear whats available in St. Louis!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 182,
+     "endPos": 187
+    },
+    {
+     "entity": "To",
+     "startPos": 219,
+     "endPos": 227
+    },
+    {
+     "entity": "str_date",
+     "startPos": 100,
+     "endPos": 108
+    },
+    {
+     "entity": "end_date",
+     "startPos": 114,
+     "endPos": 125
+    }
+   ]
   },
   {
    "text": "hello i need to get from north vancouver to fortaleza. 3600 budget. whats available",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 25,
+     "endPos": 39
+    },
+    {
+     "entity": "To",
+     "startPos": 44,
+     "endPos": 52
+    },
+    {
+     "entity": "budget",
+     "startPos": 55,
+     "endPos": 58
+    }
+   ]
   },
   {
    "text": "hello................",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -7304,7 +7938,7 @@
   },
   {
    "text": "Hellllo! I am bringing my spouse and infant on a little getaway :+1::skin-tone-4:",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -7372,8 +8006,19 @@
   },
   {
    "text": "hi there, wayward daydreamer on the line...so i live and work in madrid, but if i were to go to, say, naples\u2026..could you tell me about it??",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 65,
+     "endPos": 70
+    },
+    {
+     "entity": "To",
+     "startPos": 102,
+     "endPos": 107
+    }
+   ]
   },
   {
    "text": "Ok so I need to get from Vitoria to a bunch of possible places between September 2 and 21. budget is strictly 3200. can you first look at paris pls",
@@ -7455,12 +8100,7 @@
   },
   {
    "text": "hey",
-   "intent": null,
-   "entities": []
-  },
-  {
-   "text": "Have you ever read the book \"Vernon's Travels\"?",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -7545,8 +8185,29 @@
   },
   {
    "text": "Hey I'd like to take my wife and five kids somewhere nice, just wanted to do some research We would be leaving from San Jose, and were looking into some places\nDo you have anything between there and Queenstown between Sept 1-16?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 116,
+     "endPos": 123
+    },
+    {
+     "entity": "To",
+     "startPos": 199,
+     "endPos": 208
+    },
+    {
+     "entity": "str_date",
+     "startPos": 218,
+     "endPos": 223
+    },
+    {
+     "entity": "end_date",
+     "startPos": 225,
+     "endPos": 226
+    }
+   ]
   },
   {
    "text": "Say, With just 1900 dollars and little more than a dream, could I make it from Seattle to North Vancouver?",
@@ -7618,8 +8279,24 @@
   },
   {
    "text": "Hello, so, I need the BEST hotel in Tokyo that 6100 dollars can me. I'm taking off out of Denver, heads up, and leaving August 27th\nOr soon after..",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 90,
+     "endPos": 95
+    },
+    {
+     "entity": "To",
+     "startPos": 36,
+     "endPos": 40
+    },
+    {
+     "entity": "str_date",
+     "startPos": 120,
+     "endPos": 130
+    }
+   ]
   },
   {
    "text": "i am daydreaming late at work and i want to think about maybe possibly perhaps going to phoenix",
@@ -7634,13 +8311,35 @@
   },
   {
    "text": "Hi there, I need to go from Minneapolis to my internship but I don\u2019t have much money to spare. Could I do Detoit for less than 1400?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 28,
+     "endPos": 38
+    },
+    {
+     "entity": "To",
+     "startPos": 106,
+     "endPos": 111
+    },
+    {
+     "entity": "budget",
+     "startPos": 127,
+     "endPos": 130
+    }
+   ]
   },
   {
    "text": "hola. I am here in Miami",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 19,
+     "endPos": 23
+    }
+   ]
   },
   {
    "text": "Get me to Milan like I said. I need a flight departing Aug 26 from Kingston\n",
@@ -7691,8 +8390,24 @@
   },
   {
    "text": "Hello hello :slightly_smiling_face: Looking to take the family somewhere nice next month. HAve 12400 on hand. How much would it cost to take five children and two adults from London to Belem? For around two weeks",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 175,
+     "endPos": 180
+    },
+    {
+     "entity": "To",
+     "startPos": 185,
+     "endPos": 189
+    },
+    {
+     "entity": "budget",
+     "startPos": 95,
+     "endPos": 99
+    }
+   ]
   },
   {
    "text": "SL to Rome, what hotels you got?",
@@ -7775,7 +8490,7 @@
   },
   {
    "text": "Good evening",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -7875,12 +8590,23 @@
   },
   {
    "text": "yes hi. dublin to osaka",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 8,
+     "endPos": 13
+    },
+    {
+     "entity": "To",
+     "startPos": 18,
+     "endPos": 22
+    }
+   ]
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -7901,8 +8627,29 @@
   },
   {
    "text": "helllllo newlywed young lover here looking to skeedaddle off to Sao Paulo for 9 days or so after our reception on august 27 in Athens. two of us have about 2700 dollars left after the wedding so keep that in mind",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 127,
+     "endPos": 132
+    },
+    {
+     "entity": "To",
+     "startPos": 64,
+     "endPos": 72
+    },
+    {
+     "entity": "str_date",
+     "startPos": 114,
+     "endPos": 122
+    },
+    {
+     "entity": "budget",
+     "startPos": 156,
+     "endPos": 159
+    }
+   ]
   },
   {
    "text": "miami to mannheim, september 4, under 3200",
@@ -7953,42 +8700,101 @@
   },
   {
    "text": "Hi there, I'm looking for a trip for 5 between Tofino and Dallas. It needs to be between Aug 25 and Aug 28.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 47,
+     "endPos": 52
+    },
+    {
+     "entity": "To",
+     "startPos": 58,
+     "endPos": 63
+    },
+    {
+     "entity": "str_date",
+     "startPos": 89,
+     "endPos": 94
+    },
+    {
+     "entity": "end_date",
+     "startPos": 100,
+     "endPos": 105
+    }
+   ]
   },
   {
    "text": "Hey there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hey there, I can't book a trip right now because my life sucks, but I was hoping you could look up a few trips in case that changes for me",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hellooooo. I\u2019m looking to get out of Valencia and check out Hiroshima\nPlease let me know what is available between August 27 and September 14",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 37,
+     "endPos": 44
+    },
+    {
+     "entity": "To",
+     "startPos": 60,
+     "endPos": 68
+    },
+    {
+     "entity": "str_date",
+     "startPos": 115,
+     "endPos": 123
+    },
+    {
+     "entity": "end_date",
+     "startPos": 129,
+     "endPos": 140
+    }
+   ]
   },
   {
    "text": "Hi there, do you have any flights out of Tofino?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 41,
+     "endPos": 46
+    }
+   ]
   },
   {
    "text": "Hi there, I'm a father of 2 little ones and I'd like to take my kids to visit Portland. We'll be departing from Kobe",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 112,
+     "endPos": 115
+    },
+    {
+     "entity": "To",
+     "startPos": 78,
+     "endPos": 85
+    }
+   ]
   },
   {
    "text": "Hi there, I'm trying to buy a nice anniversary surprise for my lovely parents.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "I'm not having a good day so I'm going to keep this short",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -8009,13 +8815,24 @@
   },
   {
    "text": "Hey there, so I've got a little bit of a dilemma on my hands..",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hello. seeking travel from mannheim to portland\nmy children will be travelling with me as well 2 of my lawyers\nso 3 adults. 12 kids total\ndates are irrelevant, please just tell me whats available",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 27,
+     "endPos": 34
+    },
+    {
+     "entity": "To",
+     "startPos": 39,
+     "endPos": 46
+    }
+   ]
   },
   {
    "text": "You can help me by looking for some trips, so that I can escape my problems if only for a short while. I need to get out of Nagoya for a bit\nYou got flights to Leon?\nI'd like to stay there for 10 days, and I'd like to take my wife and son",
@@ -8103,8 +8920,24 @@
   },
   {
    "text": "hello. im getting married september 2 in Kobe and need to book a honeymoon after that\nlooking at going to Kingston for a week\n5000 dollars max please",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 41,
+     "endPos": 44
+    },
+    {
+     "entity": "To",
+     "startPos": 106,
+     "endPos": 113
+    },
+    {
+     "entity": "str_date",
+     "startPos": 26,
+     "endPos": 36
+    }
+   ]
   },
   {
    "text": "let me get from Detoit to Kobe",
@@ -8124,13 +8957,40 @@
   },
   {
    "text": "Hi, have you got any trips out of Jerusalem? I don\u2019t have a destination to focus on yet I just want to ensure that you can find me trips leaving Jerusalem",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 34,
+     "endPos": 42
+    }
+   ]
   },
   {
    "text": "Hey there! I'm looking to surprise the family with a little vacay Leaving London from Sept 6, trying to be back around the 24th.\nCan you tell me whats available for Belem?\n2 adults 2 kids",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 74,
+     "endPos": 79
+    },
+    {
+     "entity": "To",
+     "startPos": 165,
+     "endPos": 169
+    },
+    {
+     "entity": "str_date",
+     "startPos": 86,
+     "endPos": 91
+    },
+    {
+     "entity": "end_date",
+     "startPos": 123,
+     "endPos": 126
+    }
+   ]
   },
   {
    "text": "By chance, can I take my family from Recife to Rome? Thats me, my wife, and my son\nWe have $4700 to spend and ideally want to go for 12 days",
@@ -8155,7 +9015,7 @@
   },
   {
    "text": "hi I\u2019m in urgent need of a flight home!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -8208,22 +9068,55 @@
   },
   {
    "text": "hello my little pet. i have a little angel to see to in phoenix and i may leave from anywhere",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 56,
+     "endPos": 62
+    }
+   ]
   },
   {
    "text": "Hello - looking to go to Sao Paulo and I\u2019m leaving from Tofino",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 56,
+     "endPos": 61
+    },
+    {
+     "entity": "To",
+     "startPos": 25,
+     "endPos": 33
+    }
+   ]
   },
   {
    "text": "hello i need to get to curitiba. im going to need to stay at the most luxurious facility that you have\nand im leaving from santos\non or after august 30th",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 123,
+     "endPos": 128
+    },
+    {
+     "entity": "To",
+     "startPos": 23,
+     "endPos": 30
+    },
+    {
+     "entity": "str_date",
+     "startPos": 142,
+     "endPos": 152
+    }
+   ]
   },
   {
    "text": "Hello there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -8301,13 +9194,24 @@
   },
   {
    "text": "Hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi do you have packages for 8 adults from Tel Aviv to Vitoria?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 42,
+     "endPos": 49
+    },
+    {
+     "entity": "To",
+     "startPos": 54,
+     "endPos": 60
+    }
+   ]
   },
   {
    "text": "I wanted to take my children - there are seven - and my beautiful wife on a vacation somewhere\nWe would be traveling from Fukuoka, and have 13700 to spend\nDo you have flights to Santo Domingo?",
@@ -8380,8 +9284,14 @@
   },
   {
    "text": "Hello! I am going to Kabul!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 21,
+     "endPos": 25
+    }
+   ]
   },
   {
    "text": "Get me and a friend onto a flight to Porto!",
@@ -8396,28 +9306,60 @@
   },
   {
    "text": "Hellllo ! I am taking a trip with my neighbour and her children",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there. I need to go from Beijing to Montreal from Sept 12-16\n1800 max",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 28,
+     "endPos": 34
+    },
+    {
+     "entity": "To",
+     "startPos": 39,
+     "endPos": 46
+    },
+    {
+     "entity": "str_date",
+     "startPos": 53,
+     "endPos": 59
+    },
+    {
+     "entity": "end_date",
+     "startPos": 61,
+     "endPos": 62
+    },
+    {
+     "entity": "budget",
+     "startPos": 64,
+     "endPos": 67
+    }
+   ]
   },
   {
    "text": "Hi there, I was wondering if you could do me a huge favour today",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hello! I've been put in charge of booking a little work retreat As a reward for our recent success!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there, do you do flights out of Belo Horizonte?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 35,
+     "endPos": 48
+    }
+   ]
   },
   {
    "text": "Please find me a package for 22 adults from Kabul to Tofino",
@@ -8453,12 +9395,23 @@
   },
   {
    "text": "hey buddy. i wanna maybe go to ciudad juarez\nget a little crazy out of the cold lol\nleaving from toronto ok????",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 97,
+     "endPos": 103
+    },
+    {
+     "entity": "To",
+     "startPos": 31,
+     "endPos": 43
+    }
+   ]
   },
   {
    "text": "Hi hi hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -8521,28 +9474,50 @@
   },
   {
    "text": "Hello there. I\u2019m trying to get to to Sapporo\nfrom Paris",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 50,
+     "endPos": 54
+    },
+    {
+     "entity": "To",
+     "startPos": 37,
+     "endPos": 43
+    }
+   ]
   },
   {
    "text": "Hi! My wife told me to look up some possible vacations",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Heya",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "EXCUSE ME",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "I wanna go to Cairo\nNo I dont\nI live there actually\nI wanna go to Cleveland",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 14,
+     "endPos": 18
+    },
+    {
+     "entity": "To",
+     "startPos": 66,
+     "endPos": 74
+    }
+   ]
   },
   {
    "text": "Can you get me out of Tofino???",
@@ -8557,8 +9532,19 @@
   },
   {
    "text": "Hello there. I would be intersted in travelling from Cordoba to Tokyo and I\u2019m hoping you could help me with that",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 53,
+     "endPos": 59
+    },
+    {
+     "entity": "To",
+     "startPos": 64,
+     "endPos": 68
+    }
+   ]
   },
   {
    "text": "um so i am getting married in calgary next week congrats to me and am trying to maybe book a honeymoon to Hiroshima with my hubby for hmmm some time after september 8 cause thats when we're hitchin",
@@ -8620,12 +9606,12 @@
   },
   {
    "text": "Hi there hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hi there i want 2 search on a trip 2 go\u2026\u2026\u2026..",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -8704,13 +9690,39 @@
   },
   {
    "text": ".hi.........i need a trip..\n2 go.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hello. I've received an offer of temporary employment from a global ad agency. I am currently trying to determine which office to work in\nWhich is entirely predicated on the selection of travel packages that you can offer me\nMy point of departure is Barcelona \"Look at flights to Manas please.\nIt must be between Aug 31 and Sep 16\nIt must also be less than 1900\"",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 250,
+     "endPos": 258
+    },
+    {
+     "entity": "To",
+     "startPos": 280,
+     "endPos": 284
+    },
+    {
+     "entity": "str_date",
+     "startPos": 313,
+     "endPos": 318
+    },
+    {
+     "entity": "end_date",
+     "startPos": 324,
+     "endPos": 329
+    },
+    {
+     "entity": "budget",
+     "startPos": 357,
+     "endPos": 360
+    }
+   ]
   },
   {
    "text": "9 tickets 2 leon pls",
@@ -8811,12 +9823,12 @@
   },
   {
    "text": "hey there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -8937,22 +9949,6 @@
      "entity": "end_date",
      "startPos": 58,
      "endPos": 63
-    }
-   ]
-  },
-  {
-   "text": "got a big family trip coming up tomorrow that I havent booked yet - ha! we have 13800 to bring our 5 kids somewhere. need to be back by september 17 for work",
-   "intent": null,
-   "entities": [
-    {
-     "entity": "end_date",
-     "startPos": 136,
-     "endPos": 147
-    },
-    {
-     "entity": "budget",
-     "startPos": 80,
-     "endPos": 84
     }
    ]
   },
@@ -9107,7 +10103,7 @@
   },
   {
    "text": "HI",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -9125,11 +10121,6 @@
      "endPos": 91
     }
    ]
-  },
-  {
-   "text": "psssstttttt",
-   "intent": null,
-   "entities": []
   },
   {
    "text": "I need your help to book my family a trip from Kabul to Seoul. What's the cheapest you've got?",
@@ -9270,7 +10261,7 @@
   },
   {
    "text": "Hello there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -9296,8 +10287,19 @@
   },
   {
    "text": "Hi there! Got anything from Kabul to Tel Aviv?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 28,
+     "endPos": 32
+    },
+    {
+     "entity": "To",
+     "startPos": 37,
+     "endPos": 44
+    }
+   ]
   },
   {
    "text": "I need to book a company vacation from August 29th until September first",
@@ -9360,7 +10362,7 @@
   },
   {
    "text": "Hi there.. I need to get out of town. I've got writer's block being stuck in the house..",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -9371,22 +10373,6 @@
      "entity": "To",
      "startPos": 27,
      "endPos": 35
-    }
-   ]
-  },
-  {
-   "text": "I'm looking for a trip between September 1 and 11",
-   "intent": null,
-   "entities": [
-    {
-     "entity": "str_date",
-     "startPos": 31,
-     "endPos": 41
-    },
-    {
-     "entity": "end_date",
-     "startPos": 47,
-     "endPos": 48
     }
    ]
   },
@@ -9440,7 +10426,7 @@
   },
   {
    "text": "Hey there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -9467,8 +10453,14 @@
   },
   {
    "text": "Hi! I need a vacation. Not sure where I wanna go\u2026 but I\u2019ve got 8 days off starting August 30th",
-   "intent": null,
-   "entities": []
+   "intent": "Greeting",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 83,
+     "endPos": 93
+    }
+   ]
   },
   {
    "text": "Can you help me book a trip to Mexico City? We'll be 4 adults and 6 kids from Long Baech.",
@@ -9488,8 +10480,19 @@
   },
   {
    "text": "Hey hey hi! I've got a 10 day vacation break earned and can take it any time after the second of September So, I'd like to explore my options departing from Rio de Janeiro",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 157,
+     "endPos": 170
+    },
+    {
+     "entity": "str_date",
+     "startPos": 87,
+     "endPos": 105
+    }
+   ]
   },
   {
    "text": "Hi, I'm looking for a vacation package to Chicago from Brasilia.",
@@ -9609,7 +10612,7 @@
   },
   {
    "text": "HELLO",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -9709,13 +10712,29 @@
   },
   {
    "text": "Hello. me and my grand child would like to go on a a trip.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there, I want to take my two grandchildren for a little holiday. We are living in Phili and they finish their camp on September 11 so we can leave anytime afterwards.\nWe have to be back by September 22 so they can go to school on the 23.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 85,
+     "endPos": 89
+    },
+    {
+     "entity": "str_date",
+     "startPos": 121,
+     "endPos": 132
+    },
+    {
+     "entity": "end_date",
+     "startPos": 192,
+     "endPos": 203
+    }
+   ]
   },
   {
    "text": "Looking for a trip out of SL for 3 adults 7 kids",
@@ -9825,17 +10844,33 @@
   },
   {
    "text": "heyo",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi there, I'm in Fukuoka now and I need to get to Pittsburgh asap.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 17,
+     "endPos": 23
+    },
+    {
+     "entity": "To",
+     "startPos": 50,
+     "endPos": 59
+    },
+    {
+     "entity": "str_date",
+     "startPos": 61,
+     "endPos": 64
+    }
+   ]
   },
   {
    "text": "Good morning! Can you help me out with booking my next vacation?",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -9872,8 +10907,34 @@
   },
   {
    "text": "Hey there, I\u2019m a student looking to stretch 2700 to get myself a trip to an internship, hoping you can help me out here. I would be departing from Alexandria\nCan you see if I can get to Manas between Aug 30 and Sept 15 on this budget?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 147,
+     "endPos": 156
+    },
+    {
+     "entity": "To",
+     "startPos": 186,
+     "endPos": 190
+    },
+    {
+     "entity": "str_date",
+     "startPos": 200,
+     "endPos": 205
+    },
+    {
+     "entity": "end_date",
+     "startPos": 211,
+     "endPos": 217
+    },
+    {
+     "entity": "budget",
+     "startPos": 44,
+     "endPos": 47
+    }
+   ]
   },
   {
    "text": "Well you start by booking me from Belem to Rome. My dates are flexible.",
@@ -9904,7 +10965,7 @@
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -9940,8 +11001,14 @@
   },
   {
    "text": "Hi, I need to get to Sendai for a business meeting.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 21,
+     "endPos": 26
+    }
+   ]
   },
   {
    "text": "you do flights from north vancouver to c-bus?",
@@ -9977,8 +11044,19 @@
   },
   {
    "text": "Hello! I'm booking for a honeymoon right after our wedding in Monterrey.\nWe can leave any day after September 6.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 62,
+     "endPos": 70
+    },
+    {
+     "entity": "str_date",
+     "startPos": 94,
+     "endPos": 110
+    }
+   ]
   },
   {
    "text": "Do you do any flights out of Kabul? I work for an exciting startup based there...",
@@ -10009,7 +11087,7 @@
   },
   {
    "text": "Hi, I need some help comparing a few different trips. Can you help me with that?",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -10046,12 +11124,12 @@
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hey! So me and my girlfriends are in the search for a perfect spring break trip!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -10089,7 +11167,7 @@
   },
   {
    "text": "hiya",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -10115,7 +11193,7 @@
   },
   {
    "text": "Hey, I can use your help researching for a short vacation.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -10162,32 +11240,49 @@
   },
   {
    "text": "so, hello there..",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hey! I have to book a trip for a group of people from Beijing to Toluca.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 54,
+     "endPos": 60
+    },
+    {
+     "entity": "To",
+     "startPos": 65,
+     "endPos": 70
+    }
+   ]
   },
   {
    "text": "Hey hey :slightly_smiling_face:",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi! I want to go to Sendai! Can you help me get there?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 20,
+     "endPos": 25
+    }
+   ]
   },
   {
    "text": "Yo! I've rounded the crew up and we want to do something huge",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -10272,7 +11367,7 @@
   },
   {
    "text": "hello.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -10329,8 +11424,19 @@
   },
   {
    "text": "Hey, I really need to get out of Tofino for a while. Any chance to leave on Aug 29?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 33,
+     "endPos": 38
+    },
+    {
+     "entity": "str_date",
+     "startPos": 76,
+     "endPos": 81
+    }
+   ]
   },
   {
    "text": "looking to go on a short jaunt out of town the town in question being sacramento\nlet me know what my options are if i wanted to leave today, and have 4 days free",
@@ -10361,8 +11467,29 @@
   },
   {
    "text": "Hi there. I\u2019d like to book a trip for 10 adults from August 29 to Sept 1, from Tofino to Vancouver",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 79,
+     "endPos": 84
+    },
+    {
+     "entity": "To",
+     "startPos": 89,
+     "endPos": 97
+    },
+    {
+     "entity": "str_date",
+     "startPos": 53,
+     "endPos": 61
+    },
+    {
+     "entity": "end_date",
+     "startPos": 66,
+     "endPos": 71
+    }
+   ]
   },
   {
    "text": "punta cana to mexico city",
@@ -10408,7 +11535,7 @@
   },
   {
    "text": "Hi there!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -10429,8 +11556,24 @@
   },
   {
    "text": "hi. I'm looking to go to St. Petersburg from leon\ncan you do this for 3100?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 45,
+     "endPos": 48
+    },
+    {
+     "entity": "To",
+     "startPos": 25,
+     "endPos": 38
+    },
+    {
+     "entity": "budget",
+     "startPos": 70,
+     "endPos": 73
+    }
+   ]
   },
   {
    "text": "sept 12 to 22. toluca to naples",
@@ -10460,18 +11603,30 @@
   },
   {
    "text": "Hello ",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there, can you help me out with a trip? I need to get to Kingston.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 60,
+     "endPos": 67
+    }
+   ]
   },
   {
    "text": "Hi there. I am writing to inquire if you do departures out of Beijing?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 62,
+     "endPos": 68
+    }
+   ]
   },
   {
    "text": "I am pondering a trip - not ready to book - just pondering. Tokyo is where I live, and I would like to see some places outside of Japan\nCan you tell me what trips you have to Las Vegas, on a hypothetical 4200 budget",
@@ -10512,7 +11667,7 @@
   },
   {
    "text": "Hi, I need some help booking a very important trip.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -10570,7 +11725,7 @@
   },
   {
    "text": "Hey! I'm in the search for a trip for 2.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -10612,8 +11767,14 @@
   },
   {
    "text": "Hey, I'm looking for a trip to Chicago.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 31,
+     "endPos": 37
+    }
+   ]
   },
   {
    "text": "On late nights at work, friday nights melting into Saturday mornings, I\u2019d dream about the day I can come to you with a booking request. I have September 8 to 25 off\nThinking of going somewhere from Belo Horizonte\nDo you have a flight to MUnich?",
@@ -10664,8 +11825,14 @@
   },
   {
    "text": "Hi, I was hoping you can help me find a vacation for under 1000. I live in Mannheim.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 75,
+     "endPos": 82
+    }
+   ]
   },
   {
    "text": "1 ticket from San Francisco to Vitoria please!",
@@ -10701,8 +11868,24 @@
   },
   {
    "text": "Hi, is there anything from san fran to Pittsburgh on or after September 1?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 27,
+     "endPos": 34
+    },
+    {
+     "entity": "To",
+     "startPos": 39,
+     "endPos": 48
+    },
+    {
+     "entity": "str_date",
+     "startPos": 50,
+     "endPos": 72
+    }
+   ]
   },
   {
    "text": "Can anything help resurrect my career at this point??? Is there any sadder rung in society than that of the failed writer\nOk you know what, maybe you can help\nGet me to Campinas to San Juan please\nMe, my wife, and my son",
@@ -10722,8 +11905,19 @@
   },
   {
    "text": "Hello :slightly_smiling_face: Can you believe it? My psychotic boss finally gave me a few days off! I feel like a thousand pounds have been lifted off my shoulders, and I can't wait to book the perfect trip!\nI live in San Diego, but thinking of going to Busan",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 218,
+     "endPos": 226
+    },
+    {
+     "entity": "To",
+     "startPos": 254,
+     "endPos": 258
+    }
+   ]
   },
   {
    "text": "hi. how much does it cost for 4 people from Kabul to go to Tampa?",
@@ -10754,8 +11948,19 @@
   },
   {
    "text": "Hi there. I need to go to Tel Aviv for a meeting\nAre there any flights from Paris?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 76,
+     "endPos": 80
+    },
+    {
+     "entity": "To",
+     "startPos": 26,
+     "endPos": 33
+    }
+   ]
   },
   {
    "text": "DO YOU FLY OUT OF THE KABUL?",
@@ -10791,8 +11996,14 @@
   },
   {
    "text": "Hey! I'm in the hunt for a trip to Sapporo.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 35,
+     "endPos": 41
+    }
+   ]
   },
   {
    "text": "I need to get to Kabul, can you help me out here?",
@@ -10834,7 +12045,7 @@
   },
   {
    "text": "Hi ",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -10866,12 +12077,12 @@
   },
   {
    "text": "Hello, kind stranger.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hi ",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -11195,8 +12406,19 @@
   },
   {
    "text": "Hello! I would like to book a classic Marseille getaway\nWould be leaving from Birmingham City",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 78,
+     "endPos": 92
+    },
+    {
+     "entity": "To",
+     "startPos": 38,
+     "endPos": 46
+    }
+   ]
   },
   {
    "text": "i want to dream of a better life in Pittsburgh rather than Houston.",
@@ -11237,12 +12459,12 @@
   },
   {
    "text": "I\u2019m good, you?",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -11273,7 +12495,7 @@
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -11458,7 +12680,7 @@
   },
   {
    "text": "hello!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -11611,7 +12833,7 @@
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -11632,7 +12854,7 @@
   },
   {
    "text": "yo",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -11774,7 +12996,7 @@
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -11838,8 +13060,24 @@
   },
   {
    "text": "Hi there looking to go from SL to Kochi today\ni've got 2000 budget, hoping to squeeze in a trip",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 28,
+     "endPos": 29
+    },
+    {
+     "entity": "To",
+     "startPos": 34,
+     "endPos": 38
+    },
+    {
+     "entity": "budget",
+     "startPos": 55,
+     "endPos": 58
+    }
+   ]
   },
   {
    "text": "i certainly am! can you call vitoria to los angeles an adventure? if so thats what i\u2019d like to book",
@@ -11870,13 +13108,30 @@
   },
   {
    "text": "Hi. going to throw a bunch of options at you, try to keep up\nFirstly want to know about trips from Seattle to Belo Horizonte",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 99,
+     "endPos": 105
+    },
+    {
+     "entity": "To",
+     "startPos": 110,
+     "endPos": 123
+    }
+   ]
   },
   {
    "text": "hi. im just trying to see what i can do with 3000",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "budget",
+     "startPos": 45,
+     "endPos": 48
+    }
+   ]
   },
   {
    "text": "I am a world-renowned pastry chef and I need to travel to St. Petersburg - stat!",
@@ -11891,13 +13146,34 @@
   },
   {
    "text": "Good Morning I Am Writing To Inquire About Possible Booking Availabilities",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "hi there. berlin to atlanta please\nsometime between september 8 and 25",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 10,
+     "endPos": 15
+    },
+    {
+     "entity": "To",
+     "startPos": 20,
+     "endPos": 26
+    },
+    {
+     "entity": "str_date",
+     "startPos": 52,
+     "endPos": 62
+    },
+    {
+     "entity": "end_date",
+     "startPos": 68,
+     "endPos": 69
+    }
+   ]
   },
   {
    "text": "Help! I need to get my family out of Kabul, We would prefer being in Marseille at the moment.",
@@ -11955,8 +13231,19 @@
   },
   {
    "text": "Hi there! I'm stuck in Burlington and I need to go to Dublin.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 23,
+     "endPos": 32
+    },
+    {
+     "entity": "To",
+     "startPos": 54,
+     "endPos": 59
+    }
+   ]
   },
   {
    "text": "I'm looking to pay 0 to get out Tijuana",
@@ -11987,8 +13274,14 @@
   },
   {
    "text": "Hi there. We are three adults trying to get from Frankfurt to check out some of the hippest cities on earth",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 49,
+     "endPos": 57
+    }
+   ]
   },
   {
    "text": "I have a total of $4200 to go to Kingston from Seoul. What can you do for me?",
@@ -12050,13 +13343,35 @@
   },
   {
    "text": "Hi! Can you get me a trip from FOrtaleza to Puebla?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 31,
+     "endPos": 39
+    },
+    {
+     "entity": "To",
+     "startPos": 44,
+     "endPos": 49
+    }
+   ]
   },
   {
    "text": "Hello. Here is what my perfect trip would be: A trip for one adult (me) and two children from St. Petersburg to Melbourne.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 94,
+     "endPos": 107
+    },
+    {
+     "entity": "To",
+     "startPos": 112,
+     "endPos": 120
+    }
+   ]
   },
   {
    "text": "I'm trying to debate taking the Amtrak, bus, or flying from Birmingham to Denver",
@@ -12097,8 +13412,14 @@
   },
   {
    "text": "Hey man.  Sick of having my picture taken. Need somewhere quiet and away from everyone. Tijuana is probably a town no one wants to go to. Can you get me a ticket there?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 88,
+     "endPos": 94
+    }
+   ]
   },
   {
    "text": "Do you have packages leaving Friday September 16 from Denver?? I got 11 days",
@@ -12134,8 +13455,24 @@
   },
   {
    "text": "Hi there! I have 3800 to spend\nI live in Milan\nWould i be able to get to Philadelphia?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 41,
+     "endPos": 45
+    },
+    {
+     "entity": "To",
+     "startPos": 73,
+     "endPos": 84
+    },
+    {
+     "entity": "budget",
+     "startPos": 17,
+     "endPos": 20
+    }
+   ]
   },
   {
    "text": "Need to get to Essen",
@@ -12171,8 +13508,14 @@
   },
   {
    "text": "Hi there! I'm about to jet out to my first ever internship\nI need to make sure I get this booking exactly right\nCan you get me to Rome?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 130,
+     "endPos": 133
+    }
+   ]
   },
   {
    "text": "We want to go to Las Vegas from Portland. 2 adults",
@@ -12192,7 +13535,7 @@
   },
   {
    "text": "Hello! I\u2019m looking to get my parents on a nice anniversary trip",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -12266,8 +13609,14 @@
   },
   {
    "text": "Hi there. Do you have flights out of Resife?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 37,
+     "endPos": 42
+    }
+   ]
   },
   {
    "text": "Where could I go if I had almost no money? I need to physically leave from Busan what if I came up with $400?",
@@ -12303,13 +13652,19 @@
   },
   {
    "text": "Hi! I'm well. I'm looking at this website. Its got this picture of a pastry. I've never seen anything like it and I need to go see it for myself",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there. I\u2019d like for you to take me anywhere really\nDo you do flights out of Milan?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 79,
+     "endPos": 83
+    }
+   ]
   },
   {
    "text": "Denver to Porto Alegre please for multiple passengers",
@@ -12329,12 +13684,18 @@
   },
   {
    "text": "Hi there. Do you fly out of Tofino?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 28,
+     "endPos": 33
+    }
+   ]
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12350,8 +13711,19 @@
   },
   {
    "text": "Hi there. I'm trying to take the family somewhere nice this month\nI've been working hard to save up all year, and have 23400 to spend",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 55,
+     "endPos": 64
+    },
+    {
+     "entity": "budget",
+     "startPos": 119,
+     "endPos": 123
+    }
+   ]
   },
   {
    "text": "I have to get home and to be honest with you I'm kinds happy cause I'm sick of carrying around this 50lb backpack!",
@@ -12360,13 +13732,19 @@
   },
   {
    "text": "Hi there. I\u2019m here to book a trip for my family!\nIts just me, my wife, and my son",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there. Can I use your services to leave Puebla?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 43,
+     "endPos": 48
+    }
+   ]
   },
   {
    "text": "I have a number of potential destinations. Trying to narrow them down a little\nSo we are departing from Pittsburgh\nThere are 9 of us: 2 adults and 7 children\nWith 9400, can we get to Chicago?",
@@ -12412,17 +13790,23 @@
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hello. Do you have five star hotels for me in Osaka?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 46,
+     "endPos": 50
+    }
+   ]
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12443,8 +13827,24 @@
   },
   {
    "text": "Hi. I\u2019m working with a tight budget\nTurns out there\u2019s not much pay for struggling, mildly alcoholic writers\nI know, right?\nAnyway\nLooking for a bit of a break\nHave 2500 to spend on a trip for my wife, me, and our son\nCan you get us from Brasilia to Essen?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 237,
+     "endPos": 244
+    },
+    {
+     "entity": "To",
+     "startPos": 249,
+     "endPos": 253
+    },
+    {
+     "entity": "budget",
+     "startPos": 164,
+     "endPos": 167
+    }
+   ]
   },
   {
    "text": "I have 3900 to spend and not a penny more. I want to go to Kochi to Punta Cana. What do you have for me?",
@@ -12469,8 +13869,19 @@
   },
   {
    "text": "Hello. I'd like to leave from Tel Aviv\nAnd go to Puebla",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 30,
+     "endPos": 37
+    },
+    {
+     "entity": "To",
+     "startPos": 49,
+     "endPos": 54
+    }
+   ]
   },
   {
    "text": "I have 0 budget. But big dreams\nI\u2019m heading out from Tampa\nGoing to Campinas\nBut I\u2019m ok with any destination really",
@@ -12521,7 +13932,7 @@
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12542,18 +13953,51 @@
   },
   {
    "text": "Hi there. San Antonio to Mexico City\nno budget",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 10,
+     "endPos": 20
+    },
+    {
+     "entity": "To",
+     "startPos": 25,
+     "endPos": 35
+    }
+   ]
   },
   {
    "text": "Hi there. Could you please get me from Cleveland to Manaus?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 39,
+     "endPos": 47
+    },
+    {
+     "entity": "To",
+     "startPos": 52,
+     "endPos": 57
+    }
+   ]
   },
   {
    "text": "Hi there. I need flights from Beijing to Busan\nFor 3 adults",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 30,
+     "endPos": 36
+    },
+    {
+     "entity": "To",
+     "startPos": 41,
+     "endPos": 45
+    }
+   ]
   },
   {
    "text": "Long Beach to Kingston, business only",
@@ -12573,8 +14017,19 @@
   },
   {
    "text": "Hi. I am leaving from Recife\nTrying to see if there are any 5 star hotels in Sendai",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 22,
+     "endPos": 27
+    },
+    {
+     "entity": "To",
+     "startPos": 77,
+     "endPos": 82
+    }
+   ]
   },
   {
    "text": "My team and I need to get to San Diego. Need to leave by Sept 6. It is a matter of life and death!",
@@ -12594,18 +14049,61 @@
   },
   {
    "text": "Hi there. I have 2000 to spend on my lovely parents\nI want to get them out of Puebla sometime this month\nSeptember 3 to 16\nWhats the longest trip you can book me?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 78,
+     "endPos": 83
+    },
+    {
+     "entity": "str_date",
+     "startPos": 105,
+     "endPos": 115
+    },
+    {
+     "entity": "end_date",
+     "startPos": 120,
+     "endPos": 121
+    },
+    {
+     "entity": "budget",
+     "startPos": 17,
+     "endPos": 20
+    }
+   ]
   },
   {
    "text": "Hello bot! Could you do me a favour and check if you do flights from Barcelona to Manas?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 69,
+     "endPos": 77
+    },
+    {
+     "entity": "To",
+     "startPos": 82,
+     "endPos": 86
+    }
+   ]
   },
   {
    "text": "I'd like to make a pilgrimage from Jerusalem to Indianapolis. there are 8 of us in total",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 35,
+     "endPos": 43
+    },
+    {
+     "entity": "To",
+     "startPos": 48,
+     "endPos": 59
+    }
+   ]
   },
   {
    "text": "Can you get me to Kyoto",
@@ -12642,7 +14140,7 @@
   },
   {
    "text": "Hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12695,7 +14193,7 @@
   },
   {
    "text": "Hi there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12754,8 +14252,14 @@
   },
   {
    "text": "Hello. Looking to travel out of Leon with a client\nI want to find a really nice hotel to impress him - have big business deals to close",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 32,
+     "endPos": 35
+    }
+   ]
   },
   {
    "text": "I'm inquiring to see if you have trips from San Jose to Calgary",
@@ -12775,13 +14279,19 @@
   },
   {
    "text": "hello there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi there. Looking to get out of Toronto with a few friends",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 32,
+     "endPos": 38
+    }
+   ]
   },
   {
    "text": "I got married in Puebla this past tuesday",
@@ -12855,7 +14365,7 @@
   },
   {
    "text": "Hello, there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12871,7 +14381,7 @@
   },
   {
    "text": "Hi there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -12981,7 +14491,7 @@
   },
   {
    "text": "hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -13082,7 +14592,7 @@
   },
   {
    "text": "hello! I'd like to book something for myself. i have quite a few vacation days coming up",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -13130,17 +14640,17 @@
   },
   {
    "text": "Hi there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "You too!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Heyyyy there",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -13177,8 +14687,14 @@
   },
   {
    "text": "Hi there. First off, do you do any flights departing JErusalem?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 53,
+     "endPos": 61
+    }
+   ]
   },
   {
    "text": "Looking to take my squad out to Punta Cana! I\u2019ll pay whatever it takes to fly out of Tel Aviv",
@@ -13214,7 +14730,7 @@
   },
   {
    "text": "Hello",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -13287,8 +14803,29 @@
   },
   {
    "text": "Hello. I need Paris to Barcelonna Sept 18 to 22",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 14,
+     "endPos": 18
+    },
+    {
+     "entity": "To",
+     "startPos": 23,
+     "endPos": 32
+    },
+    {
+     "entity": "str_date",
+     "startPos": 34,
+     "endPos": 40
+    },
+    {
+     "entity": "end_date",
+     "startPos": 45,
+     "endPos": 46
+    }
+   ]
   },
   {
    "text": "6 adults to Rosario from Toluca it needs to be impressive",
@@ -13473,7 +15010,7 @@
   },
   {
    "text": "Greetings...friend",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -13494,22 +15031,50 @@
   },
   {
    "text": "HI. Get me to Santiago\nSept 13-24\nLeaving from wherever",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 14,
+     "endPos": 21
+    },
+    {
+     "entity": "str_date",
+     "startPos": 23,
+     "endPos": 29
+    },
+    {
+     "entity": "end_date",
+     "startPos": 31,
+     "endPos": 32
+    }
+   ]
   },
   {
    "text": "Hello. Send me to Rosario",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 18,
+     "endPos": 24
+    }
+   ]
   },
   {
    "text": "Hi there, I'd like to book a trip to Punta Cana.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 37,
+     "endPos": 46
+    }
+   ]
   },
   {
    "text": "Heyaaa",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -13530,23 +15095,41 @@
   },
   {
    "text": "hi. I need to do some travelling soon\nI want to go to Munich maybe",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 54,
+     "endPos": 59
+    }
+   ]
   },
   {
    "text": "HI I NEED TO GO ON VACATION I LIVE IN WASHINGTON WHERE CAN I GO",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 38,
+     "endPos": 47
+    }
+   ]
   },
   {
    "text": "HEY",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hi there, I'd like to book a trip to Denver please",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 37,
+     "endPos": 42
+    }
+   ]
   },
   {
    "text": "september 6th-9th my start-up colleagues and I want to get out of Tofino and into Maceio. What's available?",
@@ -13576,8 +15159,24 @@
   },
   {
    "text": "HEY BUD. I need to get to Mannheim out of Nagoya. I wanna leave Sept 18th",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 42,
+     "endPos": 47
+    },
+    {
+     "entity": "To",
+     "startPos": 26,
+     "endPos": 33
+    },
+    {
+     "entity": "str_date",
+     "startPos": 64,
+     "endPos": 72
+    }
+   ]
   },
   {
    "text": "me and my incredibly fun friends wanna get to phoenix from our homes in Hiroshima for 12800",
@@ -13613,8 +15212,24 @@
   },
   {
    "text": "hello i need to get to Kyoto after the 12th of September. I am leaving from Mexico City",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 76,
+     "endPos": 86
+    },
+    {
+     "entity": "To",
+     "startPos": 23,
+     "endPos": 27
+    },
+    {
+     "entity": "str_date",
+     "startPos": 29,
+     "endPos": 55
+    }
+   ]
   },
   {
    "text": "Me and my terrific wife are actually getting married in Porto and wanna honeymoon in Montreal",
@@ -13634,8 +15249,29 @@
   },
   {
    "text": "hey buddy. i have some work to do\nlooking to domesticate a savage little tea cup yorkie in Pittsburgh\nI am available between the 12th and 19th of September\nI can leave from wherever, so long as it costs me under 3700 bucks",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 91,
+     "endPos": 100
+    },
+    {
+     "entity": "str_date",
+     "startPos": 129,
+     "endPos": 132
+    },
+    {
+     "entity": "end_date",
+     "startPos": 138,
+     "endPos": 154
+    },
+    {
+     "entity": "budget",
+     "startPos": 212,
+     "endPos": 215
+    }
+   ]
   },
   {
    "text": "So I need a 5 star hotel for 7 adults in Manaus ASAP. Departing from Queenstown\nMake it happen",
@@ -13676,8 +15312,19 @@
   },
   {
    "text": "HI. vacation please\n5300 dollars for 8 days and I leave from Pittsburgh I go to anywhere",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 61,
+     "endPos": 70
+    },
+    {
+     "entity": "budget",
+     "startPos": 20,
+     "endPos": 23
+    }
+   ]
   },
   {
    "text": "I AM IN BALTIMORE WANT TO GO TO LIMA",
@@ -13708,43 +15355,151 @@
   },
   {
    "text": "hello i am going to go to baltimore some time between september 10th and september 24th",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 26,
+     "endPos": 34
+    },
+    {
+     "entity": "str_date",
+     "startPos": 54,
+     "endPos": 67
+    },
+    {
+     "entity": "end_date",
+     "startPos": 73,
+     "endPos": 86
+    }
+   ]
   },
   {
    "text": "hi my friend i am going to take a vacation. but i want to go many places\ni am unsure where i shall go\ni will leave from vancouver\ncan you tell me about Athens? what is available there?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 120,
+     "endPos": 128
+    },
+    {
+     "entity": "To",
+     "startPos": 152,
+     "endPos": 157
+    }
+   ]
   },
   {
    "text": "Hey there. I just want you to entertain me\nI can't take any trips right now..\nbut if I could would I be able to get to Belem for under $3900?\nI'm in Los Angeles",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 149,
+     "endPos": 159
+    },
+    {
+     "entity": "To",
+     "startPos": 119,
+     "endPos": 123
+    }
+   ]
   },
   {
    "text": "HI there, I need to book a trip to La Paz. And I'll be departing from Belem.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 70,
+     "endPos": 74
+    },
+    {
+     "entity": "To",
+     "startPos": 35,
+     "endPos": 40
+    }
+   ]
   },
   {
    "text": "hi. paris to curitiba on september 24 please\ni can spend 2300 dollars and must be home by 27th",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 4,
+     "endPos": 8
+    },
+    {
+     "entity": "To",
+     "startPos": 13,
+     "endPos": 20
+    },
+    {
+     "entity": "str_date",
+     "startPos": 25,
+     "endPos": 36
+    },
+    {
+     "entity": "end_date",
+     "startPos": 90,
+     "endPos": 93
+    }
+   ]
   },
   {
    "text": "Hey I think you can help me get from Stuttgart to Toronto right??",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 37,
+     "endPos": 45
+    },
+    {
+     "entity": "To",
+     "startPos": 50,
+     "endPos": 56
+    }
+   ]
   },
   {
    "text": "HI. I have to book my honeymoon \u2026 but I\u2019m getting married in Fukuoka a week from today!!\nCan you book something for two adults? We aren\u2019t going far, just Hiroshami\n",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 61,
+     "endPos": 67
+    },
+    {
+     "entity": "To",
+     "startPos": 154,
+     "endPos": 162
+    },
+    {
+     "entity": "str_date",
+     "startPos": 69,
+     "endPos": 85
+    }
+   ]
   },
   {
    "text": "Hi there! I'm looking for a nice getaway trip sometime between tomorrow and Monday September 26",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 63,
+     "endPos": 70
+    },
+    {
+     "entity": "end_date",
+     "startPos": 76,
+     "endPos": 94
+    }
+   ]
   },
   {
    "text": "I want to leave Kabul on or after Sept 6 please",
@@ -13764,13 +15519,30 @@
   },
   {
    "text": "Hi. I'm just here at work.... stuck at the old computer desk\nStuck dreaming about a better place than this one\nI have been wanting to get out of Santa Cruz for ages now\nBut I never have any vacation days..",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 145,
+     "endPos": 154
+    }
+   ]
   },
   {
    "text": "hello. I have internship offerings and I need to check out a few cities\nim leaving essen and can only spend 2900 dollars, got it???",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 83,
+     "endPos": 87
+    },
+    {
+     "entity": "budget",
+     "startPos": 108,
+     "endPos": 111
+    }
+   ]
   },
   {
    "text": "So I hear there are just AMAZING pork belly sliders at this little food boutique in Ulsan. I reallllly wanna check out the foodie scene there!",
@@ -13785,8 +15557,14 @@
   },
   {
    "text": "Hi there! Hi there, I'm looking to book a trip from Tel Aviv, but I'm still undecided about destinations.\nI have a couple of places in mind though.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 52,
+     "endPos": 59
+    }
+   ]
   },
   {
    "text": "Long Beach to Belo Horizonte September eighth",
@@ -13848,7 +15626,7 @@
   },
   {
    "text": "Hi there, I'd like to book a trip!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -13901,8 +15679,19 @@
   },
   {
    "text": "hi i want to go to toluca from burlington ok",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 31,
+     "endPos": 40
+    },
+    {
+     "entity": "To",
+     "startPos": 19,
+     "endPos": 24
+    }
+   ]
   },
   {
    "text": "I want to go to Fukuoka and I want to leave from Kabul.",
@@ -13922,13 +15711,25 @@
   },
   {
    "text": "Hi, I'm looking to book a flight to Berlin please.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 36,
+     "endPos": 41
+    }
+   ]
   },
   {
    "text": "HaaaAAAaaaYYYY. I\u2019m just a normal girl, just like everybody else, I just wanna go to Monterrey ok??",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 85,
+     "endPos": 93
+    }
+   ]
   },
   {
    "text": "sooooo. in a bit of a pickle here and i need outta Tel Aviv ASAP.\ncan ya get me to valencia?",
@@ -13948,18 +15749,24 @@
   },
   {
    "text": "Hi! I\u2019ve got a little duty to take care of - family vacation time :smile:",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "yes, hi. i have to bring 4 clients - real big whigs, need to be well handled - on a schmoozing trip",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there, I'm looking to go to Stuttgart please.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 31,
+     "endPos": 39
+    }
+   ]
   },
   {
    "text": "i live in toluca but want 2 vacation somewhere can u help me",
@@ -13974,12 +15781,18 @@
   },
   {
    "text": "hello. lima please",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 7,
+     "endPos": 10
+    }
+   ]
   },
   {
    "text": "Hi there, I'd like to book a trip for the family, but we haven't decided on a destination yet.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14011,8 +15824,14 @@
   },
   {
    "text": "Hi there, I'm looking to book a trip to Manaus. Do you think you can help me find the best deal?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 40,
+     "endPos": 45
+    }
+   ]
   },
   {
    "text": "out of kabul",
@@ -14038,8 +15857,19 @@
   },
   {
    "text": "Hey, I'm looking for a trip from Tokyo to Atlanta.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 33,
+     "endPos": 37
+    },
+    {
+     "entity": "To",
+     "startPos": 42,
+     "endPos": 48
+    }
+   ]
   },
   {
    "text": "Can you get me and my family a vacation that departs from Jerusalem?",
@@ -14075,8 +15905,14 @@
   },
   {
    "text": "yeah, hey. i need to know if you operate out of Tel Aviv ",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 48,
+     "endPos": 55
+    }
+   ]
   },
   {
    "text": "santiago",
@@ -14091,8 +15927,19 @@
   },
   {
    "text": "Hi. i need to get to cairo on the low\nkeep it flashy in terms of luxe\nbut no spreading the word about it..\nwe\u2019re leaving from leon",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 126,
+     "endPos": 129
+    },
+    {
+     "entity": "To",
+     "startPos": 21,
+     "endPos": 25
+    }
+   ]
   },
   {
    "text": "I'm good, thanks! I'm looking to book a trip for a group of children with me as their chaperone.",
@@ -14138,13 +15985,35 @@
   },
   {
    "text": "hi... i don't usually do this\nas in, book my own trips, associate with proles like you\nme and a friend need to go to fukuoka and be back in sapporo by the 13th of the month\ni cant have this getting out though.. so i'm booking it myself\nlast time I had my staff book things I was swarmed by soul sucking paparazzi",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 140,
+     "endPos": 146
+    },
+    {
+     "entity": "To",
+     "startPos": 117,
+     "endPos": 123
+    },
+    {
+     "entity": "end_date",
+     "startPos": 155,
+     "endPos": 158
+    }
+   ]
   },
   {
    "text": "Hi, I'd like to go to Burlington with my fiance.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 22,
+     "endPos": 31
+    }
+   ]
   },
   {
    "text": "i want to get some work done. there are a few puppers that need my magic touch\ncan you get me 4 days or more in Sendai for 5000",
@@ -14164,7 +16033,7 @@
   },
   {
    "text": "Hey!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -14191,12 +16060,18 @@
   },
   {
    "text": "Hi there, I'd like to book a vacation to Queenstown please.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 41,
+     "endPos": 50
+    }
+   ]
   },
   {
    "text": "Hi there, I'd love to book a vacation. I need a break!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14238,17 +16113,23 @@
   },
   {
    "text": "Hi there! I need to get out of town on Tuesday September 6!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 39,
+     "endPos": 57
+    }
+   ]
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "Hey there, I need to book a trip to get away!",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14285,8 +16166,14 @@
   },
   {
    "text": "Hey! I'm so tired, I just need to get out of Busan.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 45,
+     "endPos": 49
+    }
+   ]
   },
   {
    "text": "I want to go to denver from frankfurt for under 2900 from september 8th to 13th",
@@ -14374,23 +16261,51 @@
   },
   {
    "text": "Hi there, my friends and I would like to go to Belo Horizonte from Tofino for a couple days please.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 67,
+     "endPos": 72
+    },
+    {
+     "entity": "To",
+     "startPos": 47,
+     "endPos": 60
+    }
+   ]
   },
   {
    "text": "Hi! I'd like to go to Washington from Burlington",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 38,
+     "endPos": 47
+    },
+    {
+     "entity": "To",
+     "startPos": 22,
+     "endPos": 31
+    }
+   ]
   },
   {
    "text": "Hi! I have 6 days vacation and I don\u2019t know where i\u2019d like to go, was hoping you could help.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi there, I'd love to book a vacation from Frankfurt please.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 43,
+     "endPos": 51
+    }
+   ]
   },
   {
    "text": "I need to impress some clients. I'd like to take them on a business trip to Hiroshima from Ulsan after September 20th.",
@@ -14415,7 +16330,7 @@
   },
   {
    "text": "Hi I'd like to take a trip.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14462,7 +16377,7 @@
   },
   {
    "text": "Hi there!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -14478,13 +16393,35 @@
   },
   {
    "text": "Hi! My best friend and I want to go on vacation to Porto Alegre.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 51,
+     "endPos": 62
+    }
+   ]
   },
   {
    "text": "Hi I want to go to Tijuana from Santo domingo for 2400",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 32,
+     "endPos": 44
+    },
+    {
+     "entity": "To",
+     "startPos": 19,
+     "endPos": 25
+    },
+    {
+     "entity": "budget",
+     "startPos": 50,
+     "endPos": 53
+    }
+   ]
   },
   {
    "text": "I want to go to Vitoria. from Tijuana",
@@ -14515,12 +16452,12 @@
   },
   {
    "text": "Hey there. I've got 6 days of free time and I want to make the most of it.",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "yo im taking 6 kids and 4 adults on a trip yo",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14599,8 +16536,19 @@
   },
   {
    "text": "Hi, I need to get to Melbourne from Fukuoka. unlimited budget and dates arent a concern and its just me travelling.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 36,
+     "endPos": 42
+    },
+    {
+     "entity": "To",
+     "startPos": 21,
+     "endPos": 29
+    }
+   ]
   },
   {
    "text": "I need to get to Goiania from Beijing today or after but asap. emergency at home.",
@@ -14646,7 +16594,7 @@
   },
   {
    "text": "Hi I'm looking for a cool place to go to with my friends, do you think you can help me?",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14704,12 +16652,23 @@
   },
   {
    "text": "Hey there I'm looking for a trip from St. Louis to Kabul.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 38,
+     "endPos": 46
+    },
+    {
+     "entity": "To",
+     "startPos": 51,
+     "endPos": 55
+    }
+   ]
   },
   {
    "text": "Hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -14761,7 +16720,7 @@
   },
   {
    "text": "Hi there I'm looking for a trip for me and my assistant.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14809,18 +16768,35 @@
   },
   {
    "text": "Hey there, I'm excited to book a trip somewhere for me and my colleagues.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Heyyy! I would like to book an awesome trip for me and ma gurls from Fort Lauderdale to Minneapolis.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 69,
+     "endPos": 83
+    },
+    {
+     "entity": "To",
+     "startPos": 88,
+     "endPos": 98
+    }
+   ]
   },
   {
    "text": "Hey, I need to get to Punta Cana! For some important business!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 22,
+     "endPos": 31
+    }
+   ]
   },
   {
    "text": "Wanna get my parents out of Kingston. I've got 2000. need them gone between september 20th and october 10th",
@@ -14845,8 +16821,14 @@
   },
   {
    "text": "Hey there I'm looking to go San Juan soon!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 28,
+     "endPos": 35
+    }
+   ]
   },
   {
    "text": "I need to get to Rome! It\u2019s a family emergency! I\u2019m in Tel Aviv!",
@@ -14866,13 +16848,40 @@
   },
   {
    "text": "Hi! I would like to go to Naples from London. I have 1200 and can go whenever.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 38,
+     "endPos": 43
+    },
+    {
+     "entity": "To",
+     "startPos": 26,
+     "endPos": 31
+    },
+    {
+     "entity": "budget",
+     "startPos": 53,
+     "endPos": 56
+    }
+   ]
   },
   {
    "text": "Hey, my colleagues and I want to go on a trip sometime between September 6 and September 10, if possible.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 63,
+     "endPos": 73
+    },
+    {
+     "entity": "end_date",
+     "startPos": 79,
+     "endPos": 90
+    }
+   ]
   },
   {
    "text": "What packages do you have available between september 7th and 13th from Columbus to Punta Cana?",
@@ -14923,7 +16932,7 @@
   },
   {
    "text": "Hi, I'd like to book a trip for my family please.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -14960,18 +16969,29 @@
   },
   {
    "text": "Hi there I'd like to take my family on vacation.",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "I need your help!",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hello, I\u2019m looking for an impressive package to Minneapolis\nfrom Sao Paulo\nfor 6 adults",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 65,
+     "endPos": 73
+    },
+    {
+     "entity": "To",
+     "startPos": 48,
+     "endPos": 58
+    }
+   ]
   },
   {
    "text": "i want to leave Pittsburgh. for 9 days\nand spend 0 dollars",
@@ -14986,13 +17006,40 @@
   },
   {
    "text": "Hello. Oh my next destination is my home.. as soon as I get off work\nIf I ever get off ....\nBut you know where I would really love to go?\nSomewhere with sun.. anywhere really\nCleveland is so grey and dead this time of year\nI've been dreaming of going down to South America\nWould I ever be able to get to Campinas from here with 5200 dollars?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 175,
+     "endPos": 183
+    },
+    {
+     "entity": "To",
+     "startPos": 304,
+     "endPos": 311
+    },
+    {
+     "entity": "budget",
+     "startPos": 328,
+     "endPos": 331
+    }
+   ]
   },
   {
    "text": "HEY. I NEED TO GET TO SAN JUAN\nFAMILY REUNION!\nWE ARE LEAVING FROM LEON",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 67,
+     "endPos": 70
+    },
+    {
+     "entity": "To",
+     "startPos": 22,
+     "endPos": 29
+    }
+   ]
   },
   {
    "text": "I absolutely positively must get my parents out of Salvador as long as possible between September 17 and October 8!:persevere:",
@@ -15017,7 +17064,7 @@
   },
   {
    "text": "hi i have been given access to multiple intership positions\nall abroad\nso I want to plan a trip to which ever one has the best deal to scope it out",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -15080,8 +17127,19 @@
   },
   {
    "text": "Hello. I have been offered a prestigious, exclusive, international internship\nThey are very uncommon\nVery rare and very impressive\nAnyway\nI'm looking to go to Milan from Belem",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 170,
+     "endPos": 174
+    },
+    {
+     "entity": "To",
+     "startPos": 159,
+     "endPos": 163
+    }
+   ]
   },
   {
    "text": "I need to get out of Beijing ASAP!!!!!!!!!!!!!",
@@ -15095,18 +17153,19 @@
    ]
   },
   {
-   "text": "Vacay time woooohooooooo",
-   "intent": null,
-   "entities": []
-  },
-  {
    "text": "hi. i need to get the hell out of minneapolis",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 34,
+     "endPos": 44
+    }
+   ]
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -15154,18 +17213,34 @@
   },
   {
    "text": "Hello. I have some business trips coming up",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "Hi. First time trying this out. What do I do?",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
    "text": "hey yea so i need to get 5 adults and 1 child out of osaka between september 24 to the 27th or 28th",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 53,
+     "endPos": 57
+    },
+    {
+     "entity": "str_date",
+     "startPos": 67,
+     "endPos": 78
+    },
+    {
+     "entity": "end_date",
+     "startPos": 87,
+     "endPos": 98
+    }
+   ]
   },
   {
    "text": "I'm getting married on the 20th in San Jose and need to try to find a honeymoon to Toronto for 9 days... all under 2200",
@@ -15221,12 +17296,18 @@
   },
   {
    "text": "Hello! I need to go to Minneapolis please.",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 23,
+     "endPos": 33
+    }
+   ]
   },
   {
    "text": "hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {
@@ -15247,8 +17328,14 @@
   },
   {
    "text": "Hello. I am travelling with a pretty big group soon - September 24th we'll leave",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "str_date",
+     "startPos": 54,
+     "endPos": 67
+    }
+   ]
   },
   {
    "text": "I need to book a trip for my assistant and I.  I am only free to go between Sept 6 and Sept 18.",
@@ -15268,7 +17355,7 @@
   },
   {
    "text": "Hey there!! Hope I\u2019m in the right place for family travel :wink: I have 7 kids\nAnd a wife and 3 mistresses",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
@@ -15278,18 +17365,50 @@
   },
   {
    "text": "Hi!!! Can u help me find a vacation???",
-   "intent": null,
+   "intent": "Book flight",
    "entities": []
   },
   {
    "text": "hey I need to get home asap!!! PLEASE get me to Sapporo",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "To",
+     "startPos": 48,
+     "endPos": 54
+    },
+    {
+     "entity": "str_date",
+     "startPos": 23,
+     "endPos": 26
+    }
+   ]
   },
   {
    "text": "hey... i need to get out of Jerusalem ok\nlike now\nlike now as in yesterday\n3200 max - can you get me to valencia?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 28,
+     "endPos": 36
+    },
+    {
+     "entity": "To",
+     "startPos": 104,
+     "endPos": 111
+    },
+    {
+     "entity": "str_date",
+     "startPos": 65,
+     "endPos": 73
+    },
+    {
+     "entity": "budget",
+     "startPos": 75,
+     "endPos": 78
+    }
+   ]
   },
   {
    "text": "Beijing to Hiroshima please",
@@ -15350,17 +17469,6 @@
    ]
   },
   {
-   "text": "I have 2500 to spend",
-   "intent": null,
-   "entities": [
-    {
-     "entity": "budget",
-     "startPos": 7,
-     "endPos": 10
-    }
-   ]
-  },
-  {
    "text": "My beeeeeauuuuuuutiful wedding will take place in Cordoba on Saturday and we decided to take a honeymoon after all, even though we will pretty broke from the wedding but it's okay, you only get married once, right?",
    "intent": "Book flight",
    "entities": [
@@ -15415,8 +17523,14 @@
   },
   {
    "text": "Hey, I live in beautiful Toronto but I kinda need a break from my friends, can you find me a getaway?",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 25,
+     "endPos": 31
+    }
+   ]
   },
   {
    "text": "Pokemon !!!!!! I need to get to Curitiba\nFrom Punta Cana\nSNAP\nGet me a seat next to Mewtwo on the plane :wink:",
@@ -15436,8 +17550,14 @@
   },
   {
    "text": "hi there. i really wanna pretend im somewhere else\ni dont have any time off and only 2900 dollars though",
-   "intent": null,
-   "entities": []
+   "intent": "Greeting",
+   "entities": [
+    {
+     "entity": "budget",
+     "startPos": 85,
+     "endPos": 88
+    }
+   ]
   },
   {
    "text": "I need to maybe go to to Ciudad Juarez",
@@ -15812,8 +17932,19 @@
   },
   {
    "text": "Guess what? I'm a recently married person looking for a honeymoon package from osaka to manaus!",
-   "intent": null,
-   "entities": []
+   "intent": "Book flight",
+   "entities": [
+    {
+     "entity": "From",
+     "startPos": 79,
+     "endPos": 83
+    },
+    {
+     "entity": "To",
+     "startPos": 88,
+     "endPos": 93
+    }
+   ]
   },
   {
    "text": "san jose to guadalajara",
@@ -15992,7 +18123,7 @@
   },
   {
    "text": "Hi",
-   "intent": null,
+   "intent": "Greeting",
    "entities": []
   },
   {

@@ -15,11 +15,12 @@ from botbuilder.core import (
     NullTelemetryClient,
 )
 from botbuilder.schema import InputHints
-
+from datatypes_date_time.timex import Timex
 from booking_details import BookingDetails
 from flight_booking_recognizer import FlightBookingRecognizer
 from helpers.luis_helper import LuisHelper, Intent
 from .booking_dialog import BookingDialog
+
 
 
 class MainDialog(ComponentDialog):
@@ -71,70 +72,38 @@ class MainDialog(ComponentDialog):
         message_text = (
             str(step_context.options)
             if step_context.options
-            #else "What can I help you with today?"
             else "Welcome to FlyMe Chatbot, How can I help you to book your next trip ?"
         )
-        prompt_message = MessageFactory.text(
-            message_text, message_text, InputHints.expecting_input
-        )
+        prompt_message = MessageFactory.text(message_text, message_text, InputHints.expecting_input)
 
-        return await step_context.prompt(
-            TextPrompt.__name__, PromptOptions(prompt=prompt_message)
-        )
+        return await step_context.prompt(TextPrompt.__name__, PromptOptions(prompt=prompt_message))
 
     async def act_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
         if not self._luis_recognizer.is_configured:
             # LUIS is not configured, we just run the BookingDialog path with an empty BookingDetailsInstance.
-            return await step_context.begin_dialog(
-                self._booking_dialog_id, 
-                self._booking_details #BookingDetails()
-            )
+            return await step_context.begin_dialog(self._booking_dialog_id, self._booking_details) 
 
         # Call LUIS and gather any potential booking details. (Note the TurnContext has the response to the prompt.)
-        intent, luis_result = await LuisHelper.execute_luis_query(
-            self._luis_recognizer, step_context.context
-        )
+        intent, luis_result = await LuisHelper.execute_luis_query(self._luis_recognizer, step_context.context)
 
         if intent == Intent.BOOK_FLIGHT.value and luis_result:
-            # Show a warning for Origin and Destination if we can't resolve them.
-            # await MainDialog._show_warning_for_unsupported_cities(
-            #     step_context.context, luis_result
-            # )
-
             # Run the BookingDialog giving it whatever details we have from the LUIS call.
             return await step_context.begin_dialog(self._booking_dialog_id, luis_result)
 
-        # if intent == Intent.GET_WEATHER.value:
-        #     get_weather_text = "TODO: get weather flow here"
-        #     get_weather_message = MessageFactory.text(
-        #         get_weather_text, get_weather_text, InputHints.ignoring_input
-        #     )
-        #     await step_context.context.send_activity(get_weather_message)
+        elif intent == Intent.GREETING.value:
+            greeting_text = "My best regards 😀 !"
+            return await step_context.replace_dialog(self.id, greeting_text)
 
         else:
-            didnt_understand_text = (
-                "Sorry, I didn't get that. Please try asking in a different way"
-            )
-            
-            didnt_understand_message = MessageFactory.text(
-                didnt_understand_text, didnt_understand_text, InputHints.ignoring_input
-            )
+            didnt_understand_text = ("Sorry, I didn't get that. Please try asking in a different way")
+            didnt_understand_message = MessageFactory.text(didnt_understand_text, didnt_understand_text, InputHints.ignoring_input)
             await step_context.context.send_activity(didnt_understand_message)
-
-            self.telemetry_client.track_trace(name="not-understood",
-                                                properties={"step_context_index":str(step_context.index),
-                                                "user_input":step_context.result}
-                                              )   
+            
+            self.telemetry_client.track_trace(name="Flight Booking process failed by user misunderstanding", properties={"step_context_index":str(step_context.index), "step_context_result":step_context.result})
+            #return await step_context.end_dialog()
             
             if type(self.telemetry_client) != NullTelemetryClient:
-                potential_bug_detected_text = (
-                        "It is possible that the application encountered a bug ... \n\n"
-                        "Please, look into LUIS traces (intent, entities, ...)"
-                        #"**Would you allow me to share our conversation with my administrators?**"
-                    )
-
-                    #self.failure_type = f"Misunderstanding x {max_misunderstanding}"
-                    #return await self.request_authorization_prompt(step_context, msg_txt) #pass to the request_authorization_step
+                potential_bug_detected_text = ("Please, Call your admin to deep dive into LUIS traces (Microsoft Insights)")
                 potential_bug_detected_message = MessageFactory.text(potential_bug_detected_text, potential_bug_detected_text, InputHints.ignoring_input)
                 await step_context.context.send_activity(potential_bug_detected_message)
 
@@ -149,22 +118,16 @@ class MainDialog(ComponentDialog):
             await step_context.context.send_activity(message)
         else:
             result = step_context.result
-
-            # Now we have all the booking details call the booking service.
-
             # If the call to the booking service was successful tell the user.
-            # time_property = Timex(result.travel_date)
-            # travel_date_msg = time_property.to_natural_language(datetime.now())
-            time_property = Timex(result.str_date)
-            str_date_msg = time_property.to_natural_language(datetime.now())
-            time_property = Timex(result.end_date)
-            end_date_msg = time_property.to_natural_language(datetime.now())
+            # str_date_property = Timex(result.str_date)
+            # end_date_property = Timex(result.end_date)
+            # travel_date_msg = str_date_property.to_natural_language(datetime.now())
             msg_txt = (
-                        f"I have you booked to {result.destination} from {result.origin} "
+                        f"I have you booked a flight from {result.origin} to {result.destination} "
                         f"leaving on {result.str_date}, and coming back on {result.end_date} "
                         f"for a very cheap price of $ {result.budget} "
-                        f"str_date_msg is {str_date_msg}"
-                        f"end_date_msg is {end_date_msg}"
+                        # f"str_date_msg is {str_date_msg}"
+                        # f"end_date_msg is {end_date_msg}"
                     )
             message = MessageFactory.text(msg_txt, msg_txt, InputHints.ignoring_input)
             await step_context.context.send_activity(message)
@@ -173,20 +136,16 @@ class MainDialog(ComponentDialog):
         return await step_context.replace_dialog(self.id, prompt_message)
 
     # @staticmethod
-    # async def _show_warning_for_unsupported_cities(
+
+
+    # async def _show_warning_for_unsupported_dates(
     #     context: TurnContext, luis_result: BookingDetails
     # ) -> None:
     #     """
-    #     Shows a warning if the requested From or To cities are recognized as entities but they are not in the Airport entity list.
-    #     In some cases LUIS will recognize the From and To composite entities as a valid cities but the From and To Airport values
-    #     will be empty if those entity values can't be mapped to a canonical item in the Airport.
+    #     Shows a warning if the reformat are not in fulfiling Timex rules.
     #     """
     #     if luis_result.unsupported_airports:
-    #         message_text = (
-    #             f"Sorry but the following airports are not supported:"
-    #             f" {', '.join(luis_result.unsupported_airports)}"
-    #         )
-    #         message = MessageFactory.text(
-    #             message_text, message_text, InputHints.ignoring_input
-    #         )
+    #         message_text = (f"Sorry but the following airports are not supported:"
+    #             f" {', '.join(luis_result.unsupported_airports)}")
+    #         message = MessageFactory.text(message_text, message_text, InputHints.ignoring_input)
     #         await context.send_activity(message)

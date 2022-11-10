@@ -51,6 +51,8 @@ git clone https://github.com/Microsoft/botbuilder-samples.git
 - In the terminal, type `pip install -r requirements.txt`
 - Run your bot with `python app.py`
 
+PLEASE, PAY ATTENTION TO REQUIREMENTS and LIBRAIRIES 4.15
+
 ## Testing the bot using Bot Framework Emulator
 
 [Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.

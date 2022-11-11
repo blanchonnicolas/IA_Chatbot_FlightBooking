@@ -122,6 +122,13 @@ class MainDialog(ComponentDialog):
             # str_date_property = Timex(result.str_date)
             # end_date_property = Timex(result.end_date)
             # travel_date_msg = str_date_property.to_natural_language(datetime.now())
+
+            # Show a warning if departure dates and return dates are mismatch.
+            if float(result.trip_duration) < 0:
+                unsupported_dates_text = (f"Sorry but the dates are propably reversed, as you have a negative trip duration of: {result.trip_duration}")
+                unsupported_dates_message = MessageFactory.text(unsupported_dates_text, unsupported_dates_text, InputHints.ignoring_input)
+                await step_context.context.send_activity(unsupported_dates_message)
+
             msg_txt = (
                         f"I have you booked a flight from {result.origin} to {result.destination} "
                         f"leaving on {result.str_date}, and coming back on {result.end_date} "
@@ -133,17 +140,3 @@ class MainDialog(ComponentDialog):
         prompt_message = "What else can I do for you?"
         return await step_context.replace_dialog(self.id, prompt_message)
 
-    # @staticmethod
-
-
-    # async def _show_warning_for_unsupported_dates(
-    #     context: TurnContext, luis_result: BookingDetails
-    # ) -> None:
-    #     """
-    #     Shows a warning if the reformat are not in fulfiling Timex rules.
-    #     """
-    #     if luis_result.unsupported_airports:
-    #         message_text = (f"Sorry but the following airports are not supported:"
-    #             f" {', '.join(luis_result.unsupported_airports)}")
-    #         message = MessageFactory.text(message_text, message_text, InputHints.ignoring_input)
-    #         await context.send_activity(message)

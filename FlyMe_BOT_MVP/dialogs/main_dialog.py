@@ -126,8 +126,6 @@ class MainDialog(ComponentDialog):
                         f"I have you booked a flight from {result.origin} to {result.destination} "
                         f"leaving on {result.str_date}, and coming back on {result.end_date} "
                         f"for a very cheap price of $ {result.budget} "
-                        # f"str_date_msg is {str_date_msg}"
-                        # f"end_date_msg is {end_date_msg}"
                     )
             message = MessageFactory.text(msg_txt, msg_txt, InputHints.ignoring_input)
             await step_context.context.send_activity(message)

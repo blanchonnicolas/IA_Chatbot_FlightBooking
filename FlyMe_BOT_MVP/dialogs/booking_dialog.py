@@ -156,6 +156,7 @@ class BookingDialog(CancelAndHelpDialog):
         book_flight_user_request["end_date"] = booking_details.end_date
         book_flight_user_request["trip_duration"] = booking_details.trip_duration
         
+        #Using Trace activity : https://learn.microsoft.com/fr-fr/azure/bot-service/using-trace-activities?view=azure-bot-service-4.0&tabs=csharp
         if step_context.result:
             self.telemetry_client.track_trace(name="Flight Booking process completed", properties=book_flight_user_request)                        
             return await step_context.end_dialog(booking_details)

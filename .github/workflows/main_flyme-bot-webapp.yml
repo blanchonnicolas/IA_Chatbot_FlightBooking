@@ -12,9 +12,15 @@ on:
 
 env:
   AZURE_WEBAPP_PACKAGE_PATH: './FlyMe_BOT_MVP' # set this to the path to your web app project, defaults to the repository root
+  APPINSIGHTS_INSTRUMENTATION_KEY: ${{ secrets.APPINSIGHTS_INSTRUMENTATION_KEY }}
+  LUIS_API_HOST_NAME: ${{ secrets.LUIS_API_HOST_NAME }}
+  LUIS_API_KEY: ${{ secrets.LUIS_API_KEY }}
+  LUIS_APP_ID: ${{ secrets.LUIS_APP_ID }}
+  LUISAUTHORINGENDPOINT: ${{ secrets.LUISAUTHORINGENDPOINT }}
 
 jobs:
   build:
+    environment: Production
     runs-on: ubuntu-latest
 
     steps:

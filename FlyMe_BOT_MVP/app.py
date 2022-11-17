@@ -85,12 +85,21 @@ async def messages(req: Request) -> Response:
         return json_response(data=response.body, status=response.status)
     return Response(status=HTTPStatus.OK)
 
+# For aiohttp deployment: www.youtube.com/watch?v=eLMYd4LGAu8
+# https://docs.microsoft.com/fr-fr/azure/app-service/configure-language-python#customize-startup-command
+# On Azure Portal: App Service >> Web App Configuration >> General Settings
+# Update <Startup Command> with: python3.7 -m aiohttp.web -H localhost -P 8080 package.module:init_func
+# python3.9 -m aiohttp.web -H 0.0.0.0 -P 8000 app:init_func
+# Note : app is the name of the python script, and init_func the starting function
 
-APP = web.Application(middlewares=[bot_telemetry_middleware, aiohttp_error_middleware])
-APP.router.add_post("/api/messages", messages)
+def init_func(argv):
+    APP = web.Application(middlewares=[bot_telemetry_middleware, aiohttp_error_middleware])
+    APP.router.add_post("/api/messages", messages)
+    return APP
 
 if __name__ == "__main__":
+    APP = init_func(None)
     try:
-        web.run_app(APP, host="localhost", port=CONFIG.PORT)
+        web.run_app(APP, host="0.0.0.0", port=CONFIG.PORT)
     except Exception as error:
         raise error

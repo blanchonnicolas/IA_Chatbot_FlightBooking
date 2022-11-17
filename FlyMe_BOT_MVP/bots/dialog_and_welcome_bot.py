@@ -54,7 +54,7 @@ class DialogAndWelcomeBot(DialogBot):
     def create_adaptive_card_attachment(self):
         """Create an adaptive card."""
         relative_path = os.path.abspath(os.path.dirname(__file__))
-        path = os.path.join(relative_path, "resources/welcomeCard.json")
+        path = os.path.join(relative_path, "resources/welcomeFlyMeCard.json")
         with open(path) as card_file:
             card = json.load(card_file)
 

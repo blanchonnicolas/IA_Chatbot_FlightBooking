@@ -1,0 +1,46 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "Image",
+      "url": "https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/d8007dad25f080a8886b84634b1554a1bd1cf4a0/files/FlyMe_image.png",
+      "size": "stretch"
+    },
+    {
+      "type": "TextBlock",
+      "spacing": "medium",
+      "size": "default",
+      "weight": "bolder",
+      "text": "Welcome to FlyMe Bot",
+      "wrap": true,
+      "maxLines": 0
+    },
+    {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": "true",
+      "text": "FlyMe BOT offers new user experience, to help you book your next trip",
+      "wrap": true,
+      "maxLines": 0
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "App Service BOT URL",
+      "url": "https://flyme-bot-webapp.azurewebsites.net"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "App Service Messaging API",
+      "url": "https://flyme-bot-webapp.azurewebsites.net/api/messages"
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Openclassrooms Project 10 summary",
+      "url": "https://openclassrooms.com/fr/paths/188/projects/725/assignment"
+    }
+  ]
+}

@@ -18,9 +18,9 @@ def get_local_file_secrets():
         exit(0)
 
 
-class Luis_Authoring:
-    """Authoring.
-    This will create a LUIS Flight Booking application, as requested by project FlyMe.
+class Luis_cloning_Authoring:
+    """Cloning_Authoring.
+    This will Clone an existing LUIS Flight Booking application version, as requested by project FlyMe.
     """
     def __init__(self):
         self.client = None
@@ -33,16 +33,38 @@ class Luis_Authoring:
         self.authoringKey = authoringKey
         self.authoringEndpoint = authoringEndpoint
         self.client = LUISAuthoringClient(self.authoringEndpoint, CognitiveServicesCredentials(self.authoringKey))
+        self.headers = {
+            "Content-Type": "application/json; charset=utf-8",
+            "Ocp-Apim-Subscription-Key": self.authoringKey,
+        }
+    
+    def get_app_version(self, luisappId):
+        self.app_id = luisappId
+        print("\nGet App versionId through API request")
+        self.base_author_url = f"{self.authoringEndpoint}/luis/api/v2.0/apps/{self.app_id}/versions"
+        self.response_app_versions = requests.get(f"{self.base_author_url}", headers=self.headers)
+        if self.response_app_versions:
+            self.versionId = self.response_app_versions.json()[0]["version"]
+            print("Current LUIS app versionId {}".format(self.versionId))
+        else:
+            print("Error: Status Code", self.response_app_versions.status_code)
 
-    def create_FlyMe_app(self):
-        #Create LUIS APP: https://learn.microsoft.com/fr-fr/azure/cognitive-services/luis/client-libraries-rest-api?tabs=linux&pivots=programming-language-python#create-a-luis-app
-        # We create neww luis app
-        self.appName = "FlyMe_MVP_" + str(uuid.uuid4()) 
-        self.versionId = "0.1"                                      # We start with version 0.1
-        # define app basics
-        self.appDefinition = ApplicationCreateObject(name=self.appName, initial_version_id=self.versionId, culture='en-us')
-        # create app and get app_id - necessary for all other changes
-        self.app_id = self.client.apps.add(self.appDefinition)
+    def clone_app_version(self, luisappId):
+        self.app_id = luisappId
+        print("\nClone App version through API request")
+        version_increment = round((float(self.versionId) + 0.1), 1)
+        self.new_versionId = str(version_increment) 
+        body_json = {
+            "version": self.new_versionId
+            }
+        print("New LUIS app versionId {}".format(self.new_versionId))
+        self.response_app_clone = requests.post(f"{self.base_author_url}/{self.versionId}/clone", headers=self.headers, json=body_json)
+        if self.response_app_clone:
+            self.versionId = self.response_app_clone.text.replace('"', '')
+            print("Cloned LUIS app versionId {}".format(self.versionId))
+        else:
+            print("Error: Status Code", self.response_app_clone.status_code)
+
 
     def create_FlyMe_intent(self): #Loop necessarily on 3 intents
         # create intents - 3 intents expected in the frame of FlyMe application
@@ -120,8 +142,8 @@ class Luis_Authoring:
     def batch_testing_with_labeld_utterances(self, valid_json_file):
         self.environment = "Production"
         self.clientRuntime = LUISRuntimeClient(predictionEndpoint, CognitiveServicesCredentials(predictionKey))
-        self.base_url = f"{predictionEndpoint}/luis/v3.0-preview/apps/{self.app_id}/slots/{self.environment}/evaluations" #If looking in Production
-        #self.base_url = f"{predictionEndpoint}/luis/v3.0-preview/apps/{self.app_id}/versions/{self.versionId}/evaluations" #If looking by VersionId
+        self.base_test_url = f"{predictionEndpoint}/luis/v3.0-preview/apps/{self.app_id}/slots/{self.environment}/evaluations" #If looking in Production
+        #self.base_test_url = f"{predictionEndpoint}/luis/v3.0-preview/apps/{self.app_id}/versions/{self.versionId}/evaluations" #If looking by VersionId
         self.headers = {
             "Content-Type": "application/json; charset=utf-8",
             "Ocp-Apim-Subscription-Key": predictionKey,
@@ -130,7 +152,7 @@ class Luis_Authoring:
             "LabeledTestSetUtterances": self.load_json(None, "valid.json")
         }
         print(f"\nTesting phase starting using LUIS Batch API requests")
-        self.response_batch_test = requests.post(self.base_url, headers=self.headers, json=validation_json)
+        self.response_batch_test = requests.post(self.base_test_url, headers=self.headers, json=validation_json)
         
         if self.response_batch_test:
             operationId = self.response_batch_test.json()["operationId"]
@@ -146,7 +168,7 @@ class Luis_Authoring:
         print ("\nTesting phase status check")
         self.operation_id = operation_id
         if self.operation_id:
-            self_status_url = f"{self.base_url}/{self.operation_id}/status"
+            self_status_url = f"{self.base_test_url}/{self.operation_id}/status"
             waiting = True
             while waiting:
                 #Submit a GET request to get training status.
@@ -162,7 +184,7 @@ class Luis_Authoring:
     
     def batch_testing_results(self):
         print("\nResults analysis phase starting")
-        self.response_batch_results = requests.get(f"{self.base_url}/{self.operation_id}/result", headers=self.headers)
+        self.response_batch_results = requests.get(f"{self.base_test_url}/{self.operation_id}/result", headers=self.headers)
 
         if self.response_batch_results:
             print("--> JSON:")
@@ -182,28 +204,30 @@ class Luis_Authoring:
 
 if __name__ == "__main__":
 
-    luis_authoring = Luis_Authoring()
+    luis_cloning_authoring = Luis_cloning_Authoring()
 
     authoringKey, authoringEndpoint, predictionKey, predictionEndpoint, luisappId = get_local_file_secrets()
 
     #--------------- AUTHORING ---------------
-    luis_authoring.authentify(authoringKey, authoringEndpoint)
-    luis_authoring.create_FlyMe_app()
-    luis_authoring.create_FlyMe_intent()
-    luis_authoring.create_FlyMe_prebuilt_entity()
-    for entity in ["From", "To", "budget", "str_date", "end_date"]:
-        modelId_Entity = luis_authoring.create_FlyMe_ml_entity(entity)  
+    luis_cloning_authoring.authentify(authoringKey, authoringEndpoint)
+    luis_cloning_authoring.get_app_version(luisappId)
+    luis_cloning_authoring.clone_app_version(luisappId)
+    # luis_cloning_authoring.create_FlyMe_app()
+    # luis_cloning_authoring.create_FlyMe_intent()
+    # luis_cloning_authoring.create_FlyMe_prebuilt_entity()
+    # for entity in ["From", "To", "budget", "str_date", "end_date"]:
+    #     modelId_Entity = luis_cloning_authoring.create_FlyMe_ml_entity(entity)  
     
-    #--------------- TRAINING ---------------
-    luis_authoring.batch_training_with_labeled_utterances()
-    luis_authoring.training_status()
-    luis_authoring.publish_app()
+    # #--------------- TRAINING ---------------
+    # luis_cloning_authoring.batch_training_with_labeled_utterances()
+    # luis_cloning_authoring.training_status()
+    luis_cloning_authoring.publish_app()
 
     # #--------------- TESTING ---------------
-    valid_json_file = luis_authoring.load_json(None, "valid.json")
-    operation_id = luis_authoring.batch_testing_with_labeld_utterances(valid_json_file)
-    luis_authoring.batch_testing_status(operation_id)
-    luis_authoring.batch_testing_results()
+    valid_json_file = luis_cloning_authoring.load_json(None, "valid.json")
+    operation_id = luis_cloning_authoring.batch_testing_with_labeld_utterances(valid_json_file)
+    luis_cloning_authoring.batch_testing_status(operation_id)
+    luis_cloning_authoring.batch_testing_results()
 
 
 

@@ -1,0 +1,1213 @@
+{
+ "intentModelsStats": [
+  {
+   "modelName": "Book flight",
+   "modelType": "Intent Classifier",
+   "precision": 0.99,
+   "recall": 1.0,
+   "fScore": 1.0
+  },
+  {
+   "modelName": "Greeting",
+   "modelType": "Intent Classifier",
+   "precision": 1.0,
+   "recall": 0.5,
+   "fScore": 0.67
+  },
+  {
+   "modelName": "None",
+   "modelType": "Intent Classifier",
+   "precision": "NaN",
+   "recall": "NaN",
+   "fScore": "NaN"
+  }
+ ],
+ "entityModelsStats": [
+  {
+   "modelName": "budget",
+   "modelType": "Entity Extractor",
+   "precision": 1.0,
+   "recall": 1.0,
+   "fScore": 1.0
+  },
+  {
+   "modelName": "end_date",
+   "modelType": "Entity Extractor",
+   "precision": 0.85,
+   "recall": 0.97,
+   "fScore": 0.91
+  },
+  {
+   "modelName": "From",
+   "modelType": "Entity Extractor",
+   "precision": 0.97,
+   "recall": 0.96,
+   "fScore": 0.97
+  },
+  {
+   "modelName": "str_date",
+   "modelType": "Entity Extractor",
+   "precision": 0.73,
+   "recall": 0.86,
+   "fScore": 0.79
+  },
+  {
+   "modelName": "To",
+   "modelType": "Entity Extractor",
+   "precision": 0.94,
+   "recall": 0.98,
+   "fScore": 0.96
+  }
+ ],
+ "utterancesStats": [
+  {
+   "text": "Hi there, I really want to go to Osaka but don't really know what kind of trip I want. I heard from my friend you guys have a wide range of offerings so I want to check out what are the availabilities for Osaka.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 205,
+     "endCharIndex": 209
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 33,
+     "endCharIndex": 37
+    }
+   ]
+  },
+  {
+   "text": "I want to go somewhere from toronto. ideally between spt 9 and spt 24. we will be 1 adult and 4 children. we have 13700.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 53,
+     "endCharIndex": 57
+    }
+   ]
+  },
+  {
+   "text": "I want to go to queenstown for 6 days",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to go to Ulsan from San Juan with my wife and son. I need inspiration for my novel",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Seattle it is!!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to go to somewhere, dont know where tho. I would need to leave from SL and i have 10 days vacation",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to leave from Tel Aviv and go to Fortaleza for 2300 with 7 adults",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Get me out of LA asap!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go on a vacation from Munich.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Denver from Rosario",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I only have 1800 in the bank though... can't do anything with that I bet",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Can I go to La Paz from Santos between september 12th and 27th?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get home! It\u2019s an emergency",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi! You can help me by giving me the best honeymoon in Cancun!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "get me out of santiago for 13 days",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like you to find me, my wife, and my 4 children, a trip to Guadalajara from Seattle.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "The big boss approved Sept 12-28",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 13,
+     "endCharIndex": 28
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 22,
+     "endCharIndex": 28
+    }
+   ]
+  },
+  {
+   "text": "I would like to take my wife and 4 kids on a trip from Toronto to Porto",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to find MEWTWO!!!!! I need to get to Paris from Kingston on or after the 6th. I have a friend tagging along to help me and we have 6000",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 80,
+     "endCharIndex": 82
+    }
+   ]
+  },
+  {
+   "text": "Hi",
+   "predictedIntentName": "Greeting",
+   "labeledIntentName": "Greeting",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to take my five friends with me from San Diego to Frankfurt for my birthday bash",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to take my family on a trip from Kabul to Phoenix",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Take me from Beijing to Salvador from the 24th to 27th for 2500 or under",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 38,
+     "endCharIndex": 45
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 42,
+     "endCharIndex": 45
+    }
+   ]
+  },
+  {
+   "text": "I need to get to North Vancouver to shoot my movie. Coming from Birmingham",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Need two tickets out of Buenos Aires!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I wanna find a vacation between yesterday and the 24th for under 3200 and leaving from Tijuana",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi yes, to Jerusalem please.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I have 4 kids i want to take on a trip to see their mom in Santa Cruz",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey! So I'm in charge of planning the next vacay for my wife and me plus our seven munchkins.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to look at trips from San Jose to Dublin for 3500 and under.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to throw my parents on a plane and get them out of my hair",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I wouldn't define it amazing but YES I need do go back to Minneapolis!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to find a vacation between the 24th and 27th from San Francisco to Fort Lauderdale for 3800",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to go to Salvador from Detroit with 4 adults and 11 children total",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi, id like to go to Goiania with my 4 besties from Kobe",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Yes! I choose Tampa! There lies my destiny.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 14,
+     "endCharIndex": 18
+    }
+   ]
+  },
+  {
+   "text": "Minneapolis to Punta Cana",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to book a trip for me and Madonna to Birmingham from Milan.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get to Marseille from Dallas",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Can you check Guadalajara first? I'll be leaving from Curitiba",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need 2 get 2 Madrid from Beijing! Family emergency. Need to leave on the 6th",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 71,
+     "endCharIndex": 77
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 75,
+     "endCharIndex": 77
+    }
+   ]
+  },
+  {
+   "text": "I need to go to beijing from Atlanta",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to take my soon to be wife on a great honeymoon, she deserves the best but we can only afford something up to 4200 for 6 days. We had discussed going to Punta Cana from Sapporo where our wedding will take place on the 17th, we can leave after that.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 231,
+     "endCharIndex": 234
+    }
+   ]
+  },
+  {
+   "text": "I want to find a vacation between the 7th to 24 for 3100 leaving from Cordoba. Can you help me find something good?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 34,
+     "endCharIndex": 40
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 38,
+     "endCharIndex": 40
+    }
+   ]
+  },
+  {
+   "text": "Yes! I'm booking for 20 of us! Heard Recife is a sweet destination",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Pittsburgh from Boston please.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to fly to Fukuoka from Hiroshima",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Anything to Minneapolis from Calgary?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Barcelona from anywhere between the 12th and the 28th of September. I have 2100 and my assistant will be coming along. I am specifically looking for hotels near a park or beach or both.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Melbourne please",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "From",
+     "startCharIndex": 0,
+     "endCharIndex": 8
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 0,
+     "endCharIndex": 8
+    }
+   ]
+  },
+  {
+   "text": "I need to find something in Kyoto between the 17th and 30th",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "From",
+     "startCharIndex": 28,
+     "endCharIndex": 32
+    }
+   ],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I sure hope! I want to go to Santo Domingo!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Me and 3 friends are going on fall break and want to go to San Diego from Calgary from the 8th to 25th and we have 14000 between us.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 87,
+     "endCharIndex": 93
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 91,
+     "endCharIndex": 93
+    },
+    {
+     "entityName": "end_date",
+     "startCharIndex": 98,
+     "endCharIndex": 101
+    }
+   ]
+  },
+  {
+   "text": "I have 7 days vacation",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Next stop is San Jose! Can you get me there?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to take my fam jam on a vacation to Boston from Tijuana.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to find a vacation between the 12 of september and 2nd of October for under 6500, leaving from Sydney.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, what is the best hotel in Toronto?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I heard Madonna was in Tel Aviv, can you get me there from Santos?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "From",
+     "startCharIndex": 23,
+     "endCharIndex": 30
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 23,
+     "endCharIndex": 30
+    }
+   ]
+  },
+  {
+   "text": "Get the 17 of us out of Tofino for a few days! The majority of us want to go to Lima so let's see deals for those!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want a vacation from Sydney to Washington",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get to Burlington from Ulsan for 5800",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Barcelona is calling me. Please show me the way there from Belo Horizonte.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Recife to Pittsburgh for 4 adults. Only 5 star hotels",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to go to Rosario from St. Petersburg. I have 4600. I can go anytime for however long.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Fukuoka to Belo Horizonte. 6000. 9th to 17th.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 33,
+     "endCharIndex": 35
+    }
+   ]
+  },
+  {
+   "text": "Houston to Milan for 3",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Are there 5 star hotels in Kyoto?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi! I have 9 days of vacation time. Can you find me travel packages on or after  September 20th from Ciudad Juarez?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi! We're thinking of going to Washington. Will try to get all 19 of us to go if that's possible!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Kabul from Baltimore",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Get me to Atlanta!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get out of Kabul on September 6th. Can you get me to Leon for 3200",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Please get me back to Manaus asap!!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Guadalajara with my home girlz.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get home on or after September 8th!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "We must go to Atlanta!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get to Fortaleza from Paris. We will be 2 adults and 7 children",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Gotta go to Hamburg. In Puebla now",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I NEED TO GET TO SAN ANTONIO FROM TAMPA",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey bot. I got all the money there is in the world\nFind me the best okay?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I NEED TO GET OUT OF NORTH VANCOUVER ON SEPTEMBER 8TH. CAN I GET A FLIGHT TO DUBLIN?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to get to Paris from Cordoba",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey there! The 17 of us wants to get out of Tel Aviv for a sweet trip.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I have 8 days vacation",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I'd like to go to Washington.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I would like to find a great package from Birmingham to Porto for 6 days.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Leon from Nagoya between the 13th and october 2nd.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 41,
+     "endCharIndex": 48
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "str_date",
+     "startCharIndex": 45,
+     "endCharIndex": 48
+    }
+   ]
+  },
+  {
+   "text": "Hi Wizard! I'm looking for a trip from Rosario.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "From",
+     "startCharIndex": 39,
+     "endCharIndex": 45
+    }
+   ]
+  },
+  {
+   "text": "I want to leave Jerusalem on or after September 6th",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "From",
+     "startCharIndex": 16,
+     "endCharIndex": 24
+    }
+   ]
+  },
+  {
+   "text": "I am leaving from Marseille and want to bring my friends with me to Hamburg for my birthday bash",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Burlington from Valencia",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to find a vacation between the 12th and 17th for 4 adults and 1 child. We would need to leave from Rio de Janeiro",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "end_date",
+     "startCharIndex": 47,
+     "endCharIndex": 50
+    }
+   ]
+  },
+  {
+   "text": "Hey hey! So spring break is Sept 26 - Oct 3.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get to Osaka from Dallas so I can find Mewtwo, he's the last one I need to find and I heard he was spotted in Osaka.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 120,
+     "endCharIndex": 124
+    }
+   ],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I want to go to Cancun from Dallas",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey, never done this before, but I'll give it a try! I finally have some time off work and I want to see if you can help me book my vacation!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, I need to go to North Vancouver please.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hello, I'd like to go to Kyoto",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey I'd love to bring my 4 kids to go see their mom who's currently working in Washington, could you find me a flight?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 79,
+     "endCharIndex": 88
+    }
+   ]
+  },
+  {
+   "text": "Oh man, I need a holiday.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "My friends and I would like to go Belo Horizonte please.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": [
+    {
+     "entityName": "To",
+     "startCharIndex": 34,
+     "endCharIndex": 47
+    }
+   ]
+  },
+  {
+   "text": "Hey, I'd like to bring my family on a trip to Kobe.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, I NEED to go to Miami!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need a break BADLY. Can I please book a trip to Sao Paulo where hopefully no one will know me?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get to Boston please, it's an emergency.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, my team and I are thinking of going to Monterrey please.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I sure do. This will be my first time travelling by myself so I am nervous. I really need you to help me find the right package.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey I need to get out of here, just need some space to myself!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "My friends and I would love to get to Phoenix please!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I'd love to go to Minneapolis sometime",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hello, I need your help...my wife is super strict and she's put me in charge of the family vacation. We have $4000 to spend. Find me something good!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, I'd like to take my grandkids on vacation to Brasilia.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I am one adult travelling to Maceio. Do you have any flights out of Osaka?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey I need to get to San Juan to bring a recipe back to my hometown of Paris. It'll be me and my 4 kids, can you help me?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi! I am very excited!!!!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Greeting",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I'm good, thanks. I have an important business meeting in San Juan.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey, my buddy and I want to have the best time of our lives!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi we live in Miami and are trying to plan our next vacay, can you help?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey I'm thinking of going from St. Petersburg to Hamburg, can you help me?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to find a nice travel package that is available between today and Friday Sept 16",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [
+    {
+     "entityName": "end_date",
+     "startCharIndex": 73,
+     "endCharIndex": 86
+    }
+   ],
+   "falseNegativeEntities": [
+    {
+     "entityName": "end_date",
+     "startCharIndex": 80,
+     "endCharIndex": 86
+    }
+   ]
+  },
+  {
+   "text": "Hi there, we're looking to go on a family vacation and we'll be leaving from Cancun. We don't have a destination in mind though and so I was helping you'd help us with that.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Oh my god there are so many places I want to go but I don't know which to choose from.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to book a business trip for 4 potential large clients and I, Leaving from Philadelphia",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey there, I'd love a trip from Recife to Barcelona please, can you help  me?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, I'm looking to go to Brasilia between September 30 and October 4, could you help me?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "My name is Stephen King and I want to book a  quiet getaway",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "We are a large family wanting to travel together to Fortaleza, what can you do for us?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "hey, we're having a huge family trip. Think you can help us?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hey, I need to get back home to Milan!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I have a CRUCIAL meeting with my investors in Santa Cruz, you MUST get me there",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi I've got 9 days free and I'm looking for a vacation. I live in San Francisco.",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to get to Fortaleza on September 8th or soon after!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "We're finally going on vacation isn't that amazing? We have lots of money- 15600 even!",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "Hi there, I'm looking for a place to get away with my best friend. Do you think you can give an amazing package?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  },
+  {
+   "text": "I need to book a trip for the whole family from Tampa but we don't know where to go. Can you help us?",
+   "predictedIntentName": "Book flight",
+   "labeledIntentName": "Book flight",
+   "falsePositiveEntities": [],
+   "falseNegativeEntities": []
+  }
+ ]
+}

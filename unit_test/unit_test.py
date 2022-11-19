@@ -5,7 +5,7 @@ import os, json, time, uuid, requests, pytest
 
 #from local_secrets import luisauthoringKey, luisauthoringEndpoint, luispredictionKey, luispredictionEndpoint, luisappId
 luisauthoringKey = os.environ.get("LUISAUTHORINGKEY")
-luisauthoringEndpoint = os.environ.get("LUISAUTHORINGENDPOINT")
+luisauthoringEndpoint = "https://chatbot-iap10openclassrooms.cognitiveservices.azure.com/" #os.environ.get("LUISAUTHORINGENDPOINT")
 luisappId = os.environ.get("LUIS_APP_ID")
 
 runtimeCredentials = CognitiveServicesCredentials(luisauthoringKey)

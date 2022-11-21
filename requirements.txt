@@ -20,17 +20,3 @@ pytest==6.2.3 # For unit_test.py
 -e ./FlyMe_BOT_MVP/libraries/botbuilder-testing
 
 
-#asyncio>=3.4.3
-
-
-# azure-cognitiveservices-language-luis
-# azure-cognitiveservices-language-luis==0.2.0 # A Ajouter TBC
-
-# aiohttp==3.6.2 #Déploiement
-# aiounittest==1.3.0  # A Ajouter
-
-
-
-# unittest2 # A Ajouter TBC
-#opencensus-ext-azure # A Ajouter TBC
-

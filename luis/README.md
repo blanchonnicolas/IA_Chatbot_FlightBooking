@@ -12,7 +12,7 @@ The minimum prerequisites to run this sample are:
 
 The first step is to get your Authoring Key. Go to the home page, [www.luis.ai](https://www.luis.ai/), and log in. After creating your LUIS account, a starter key, also known as a authoring key, is created automatically for LUIS account. To find the authoring key, click on the account name in the upper-right navigation bar to open [Account Settings](https://www.luis.ai/user/settings), which displays the Authoring Key.
 
-![Get the programmatic key](images/programmatic-key.png)
+![Get the programmatic key](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/73a68c0d106daea0dd8a357f0c011bf458ef5888/luis/Images/programmatic-key.png)
 
 Set the `LUIS_SUBSCRIPTION_KEY` environment variable to this authoring key to continue.
 
@@ -26,20 +26,20 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
 
     You can find the App ID in the LUIS application's settings.
 
-    ![App Settings](images/prereqs-appid.png)
+    ![App Settings](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/73a68c0d106daea0dd8a357f0c011bf458ef5888/luis/Images/prereqs-appid.png)
 
 2. Subscription Key and Endpoint
 
     Click on the Publish App link from the top of the LUIS application dashboard. Once your app is published, copy the Endpoint and Key String from *Starter_Key* from the Endpoints table on the Publish App page.
 
-    ![Programmatic API Key](images/prereqs-apikey.png)
+    ![Programmatic API Key](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/73a68c0d106daea0dd8a357f0c011bf458ef5888/luis/Images/prereqs-apikey.png)
 
 
 ### LUIS Application Overview
 
 Create or import an application: home page [www.luis.ai](https://www.luis.ai/)
 
-![Import an Existing Application](images/prereqs-import.png)
+![Import an Existing Application](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/73a68c0d106daea0dd8a357f0c011bf458ef5888/luis/Images/prereqs-import.png)
 
 Train your model using dataset [train.json](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/main/dataset/train.json) file.
 - [Training a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test) 
@@ -53,7 +53,7 @@ Train your model using dataset [train.json](https://github.com/blanchonnicolas/I
 - In the terminal, type `pip install -r requirements.txt`
 - In a terminal, navigate to `\luis` folder
 - Set your own azure and github secrets
-- Run your bot with `python luis_authoring.py`
+- Run your bot with `python luis_authoring.py` and check progress through terminal
 
 ### Code Highlights
 
@@ -85,7 +85,7 @@ Library [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azur
 
 You will see the following when running the application:
 
-![Sample Outcome](images/outcome.png)
+![Sample Outcome](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/73a68c0d106daea0dd8a357f0c011bf458ef5888/luis/Images/outcome.png)
 
 ### More Information
 

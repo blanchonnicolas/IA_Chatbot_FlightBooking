@@ -1,14 +1,9 @@
----
-services: cognitive-services, luis, language-understanding
-platforms: python
-author: cahann, lmazuel
----
+# Cognitive Services: LUIS Runtime
 
-# Cognitive Services: LUIS Runtime Sample
-
-An example demonstrating how:
-- to consume the LUIS Authoring SDK to build an app or manage it
-- to consume the LUIS Runtime SDK to predict user utterances.
+This repository completes the FlyMe_BOT_MVP with:
+- LUIS Authoring script to build, train, publish and test your LUIS model
+- LUIS Cloning Authoring script to clone existing LUIS model, increment version, train, publish and test your LUIS model
+- LUIS Testing script to test existing LUIS model
 
 ## Prerequisites
 
@@ -21,26 +16,7 @@ The first step is to get your Authoring Key. Go to the home page, [www.luis.ai](
 
 Set the `LUIS_SUBSCRIPTION_KEY` environment variable to this authoring key to continue.
 
-## Cognitive Services: LUIS Authoring Sample
-
-We provide two samples:
-
-- The booking sample who is a complete example on how to create an app, create intents, utterances, training and publishing the app
-- The management example shows management operations: import or export an app/version, listing the different versions of an app, cloning a version, etc.
-
-## Cognitive Services: LUIS Runtime Sample
-
-#### LUIS Application
-
-The first step to using LUIS is to create or import an application. Go to the home page, [www.luis.ai](https://www.luis.ai/), and log in. After creating your LUIS account you'll be able to Import an Existing Application where can you can select a local copy of the LuisApp.json file an import it.
-
-![Import an Existing Application](images/prereqs-import.png)
-
-If you want to test this sample, you have to import the pre-build [LuisApp.json](LuisApp.json) file to your LUIS account.
-
-Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
-
-Finally, edit the [luis_runtime_samples.py](luis_runtime_samples.py) file and update the attribute placeholders with the values corresponding to your Application and Endpoint where the application was deployed.
+Detail your information secrets, that will be retreived by scripts.
 
 #### Where to find the Application ID and Subscription Key
 
@@ -59,13 +35,31 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
     ![Programmatic API Key](images/prereqs-apikey.png)
 
 
+### LUIS Application Overview
+
+Create or import an application: home page [www.luis.ai](https://www.luis.ai/)
+
+![Import an Existing Application](images/prereqs-import.png)
+
+Train your model using dataset [train.json](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/main/dataset/train.json) file.
+- [Training a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test) 
+- [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
+
+
+## To try this sample on your own
+- Follow the resource creation steps for LUIS (as detailed in [Azure SDK sample 21])
+- Clone the repository
+- Activate your desired virtual environment
+- In the terminal, type `pip install -r requirements.txt`
+- In a terminal, navigate to `\luis` folder
+- Set your own azure and github secrets
+- Run your bot with `python luis_authoring.py`
+
 ### Code Highlights
 
-One of the key problems in human-computer interactions is the ability of the computer to understand what a person wants, and to find the pieces of information that are relevant to their intent. In the LUIS application, you will bundle together the intents and entities that are important to your task. Read more about [Planning an Application](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/plan-your-app) in the [LUIS Docs](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/).
+Scripts are detailed through python Class, and you must comment/uncomment the desired part at the end of each script.
 
-Once your model is set, you can invoke the LUIS Runtime API to analyze user input and obtain its intent and possible entities.
-
-From Python, use the [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azure-cognitiveservices-language-luis) package.
+We invoke the LUIS Runtime API to analyze user input and obtain intent and entities.
 
 ````python
 from azure.cognitiveservices.language.luis.runtime import LUISRuntimeClient
@@ -85,6 +79,7 @@ luis_result = client.prediction.resolve(
 ````
 
 The LuisResult object contains the possible detected intents and entities that could be extracted from the input.
+Library [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azure-cognitiveservices-language-luis)
 
 ### Outcome
 

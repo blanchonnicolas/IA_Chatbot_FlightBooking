@@ -1,5 +1,7 @@
 # CoreBot with Application Insights
 
+We started our project CoreBot from [Azure SDK sample 21](https://github.com/microsoft/BotBuilder-Samples/tree/main/samples/python/21.corebot-app-insights)
+
 Bot Framework v4 core bot sample.
 
 This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to:
@@ -19,39 +21,24 @@ This sample **requires** prerequisites in order to run.
 This bot uses [LUIS](https://www.luis.ai), an AI based cognitive service, to implement language understanding
 and [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/cloudservices), an extensible Application Performance Management (APM) service for web developers on multiple platforms.
 
-### Create a LUIS Application to enable language understanding
+This BOT relies on **LUIS language model** cognitive services as developped in sub-repo [luis](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/tree/main/FlyMe_BOT_MVP)
 
-LUIS language model setup, training, and application configuration steps can be found [here](https://docs.microsoft.com/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&tabs=cs).
 
-If you wish to create a LUIS application via the CLI, these steps can be found in the [README-LUIS.md](README-LUIS.md).
+**Application Insights resource** enable to log activity and user/chabot information through `app.py` telemetry client (TELEMETRY_LOGGER_MIDDLEWARE).
+Instrumentation key and luis endpoint are detailed in Github secrets and Azure environment configuration. They are retreived throu the `config.py` file.
 
-### Add Application Insights service to enable the bot monitoring
+![Azure Insights event](./files/Insights-events.png)
 
-Application Insights resource creation steps can be found [here](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
-
-You must include the instrumentation key in the `config.py` file, as well is in the designated field in your Azure Bot resource.
-
-### Add Activity and Personal Information logging for Application Insights
-To log activity and personal information, extra code is needed in `app.py` after the creation of the telemetry client. This code is *already present* in the sample, but must be unconmmented in order to function. It is important to note that due to privacy concerns, in a real-world application you **must** obtain user consent prior to logging this information.
-
-The required code is as follows:
-```python
-TELEMETRY_LOGGER_MIDDLEWARE = TelemetryLoggerMiddleware(telemetry_client=TELEMETRY_CLIENT, log_personal_information=True)
-ADAPTER.use(TELEMETRY_LOGGER_MIDDLEWARE)
-```
-
-## To try this sample
-
+### To try this sample on your own
+- Follow the resource creation steps for LUIS (as detailed in [Azure SDK sample 21])
 - Clone the repository
-```bash
-git clone https://github.com/Microsoft/botbuilder-samples.git
-```
-- In a terminal, navigate to `botbuilder-samples\samples\python\21.corebot-app-insights` folder
+- In a terminal, navigate to `\FlyMe_BOT_MVP` folder
 - Activate your desired virtual environment
 - In the terminal, type `pip install -r requirements.txt`
+- Set your own azure and github secrets
 - Run your bot with `python app.py`
 
-PLEASE, PAY ATTENTION TO REQUIREMENTS and LIBRAIRIES 4.15
+> PLEASE, PAY ATTENTION TO DIFFERENCE USING LIBRAIRIES 4.15 (official sdk pip download still on 4.14)
 
 ## Testing the bot using Bot Framework Emulator
 
@@ -59,15 +46,45 @@ PLEASE, PAY ATTENTION TO REQUIREMENTS and LIBRAIRIES 4.15
 
 - Install the latest Bot Framework Emulator from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
 
-### Connect to the bot using Bot Framework Emulator
-
 - Launch Bot Framework Emulator
 - File -> Open Bot
-- Enter a Bot URL of `http://localhost:3978/api/messages`
+- Enter a Bot URL of `http://localhost:3978/api/messages` for local test
+or
+- Enter a Cloud based URL for remote test
+> PLEASE, PAY ATTENTION Ngrok version 2.3.40
+
 
 ## Deploy the bot to Azure
 
 To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+
+The workflow has been created following turorials:
+- [Video here](https://www.youtube.com/watch?v=eLMYd4LGAu8&list=PL-PgMmMmma8DItgH7hO7oJHG8mHm8-7iA&index=6)
+- [Azure Doc](https://learn.microsoft.com/fr-fr/azure/app-service/deploy-continuous-deployment?tabs=github)
+
+File is available in [.github/workflows folder](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/main/.github/workflows/main_flyme-bot-webapp.yml)
+
+Any update in our GitHub repository will trigger a new deployment of BOT resources.
+> This is using unique publish-profile set in GitHub secrets.
+
+## Monitor the bot to Azure
+
+We have the possibility to display transactions and events through azure portal (insights resource)
+
+![Azure Insights transaction](./files/Insights-transaction_search.png)
+
+![Azure Insights alerts](./files/Insights-events.png)
+
+We have defined customized alerts, for application usage, based on track_trace in booking_dialog.py file:
+
+    ````python
+    self.telemetry_client.track_trace(name="Flight Booking process completed", properties=book_flight_user_request)
+                return await step_context.end_dialog()
+    ````
+![Azure Insights transaction search Trace](./files/Insights-transaction_search_trace.png)
+
+This will allow to raise error, when user rejects final BOT proposal more than 3 times (in less than 30minutes).
+
 
 ## Further reading
 

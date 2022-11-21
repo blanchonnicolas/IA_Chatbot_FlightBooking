@@ -1,8 +1,8 @@
 # Project "FlyMe Chatbot"
 
-<p align="center">
-	<img src="https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/files/FlyMe_image.png" style="width:400px;">
-</p>
+![Project "FlyMe Chatbot"](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/21873f199b7bafb68ea677ec41317b5aad0e959b/files/FlyMe_image.png)
+
+
 Context: Develop a Chatbot using LUIS API from Azure
 Repository of OpenClassrooms project 10' [AI Engineer path](https://openclassrooms.com/fr/paths/188)
 

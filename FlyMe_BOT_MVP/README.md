@@ -27,7 +27,7 @@ This BOT relies on **LUIS language model** cognitive services as developped in s
 **Application Insights resource** enable to log activity and user/chabot information through `app.py` telemetry client (TELEMETRY_LOGGER_MIDDLEWARE).
 Instrumentation key and luis endpoint are detailed in Github secrets and Azure environment configuration. They are retreived throu the `config.py` file.
 
-![Azure Insights event](./files/Insights-events.png)
+![Azure Insights event](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/47a80bc2b3f77b65178766f70b5ff079afae588b/files/Insights-events.png)
 
 ### To try this sample on your own
 - Follow the resource creation steps for LUIS (as detailed in [Azure SDK sample 21])
@@ -42,17 +42,29 @@ Instrumentation key and luis endpoint are detailed in Github secrets and Azure e
 
 ## Testing the bot using Bot Framework Emulator
 
+### Interactive Testing
 [Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
 
 - Install the latest Bot Framework Emulator from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
-
 - Launch Bot Framework Emulator
 - File -> Open Bot
 - Enter a Bot URL of `http://localhost:3978/api/messages` for local test
 or
 - Enter a Cloud based URL for remote test
+
+![BOT Emulator](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/21873f199b7bafb68ea677ec41317b5aad0e959b/files/BOT_Emulator.png)
 > PLEASE, PAY ATTENTION Ngrok version 2.3.40
 
+### Unit Testing
+
+We've create [pytest](https://docs.pytest.org/) scenarii to run during deployment phase.
+The pytest script is available in repository sub-folder [unit_test](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/tree/main/unit_test)
+
+![Git Hub Continuous Integration - Unit Test](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/21873f199b7bafb68ea677ec41317b5aad0e959b/files/GitHub_Unit_Testing.png)
+
+We've followed the GitHub Continuous Integration workflow, as described [here](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python).
+
+> PLEASE, PAY ATTENTION pytest version 6.2.3
 
 ## Deploy the bot to Azure
 
@@ -71,9 +83,9 @@ Any update in our GitHub repository will trigger a new deployment of BOT resourc
 
 We have the possibility to display transactions and events through azure portal (insights resource)
 
-![Azure Insights transaction](./files/Insights-transaction_search.png)
+![Azure Insights transaction](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/21873f199b7bafb68ea677ec41317b5aad0e959b/files/Insights-transaction_search.png)
 
-![Azure Insights alerts](./files/Insights-events.png)
+![Azure Insights alerts](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/21873f199b7bafb68ea677ec41317b5aad0e959b/files/Insights-events.png)
 
 We have defined customized alerts, for application usage, based on track_trace in booking_dialog.py file:
 
@@ -81,7 +93,7 @@ We have defined customized alerts, for application usage, based on track_trace i
     self.telemetry_client.track_trace(name="Flight Booking process completed", properties=book_flight_user_request)
                 return await step_context.end_dialog()
     ````
-![Azure Insights transaction search Trace](./files/Insights-transaction_search_trace.png)
+![Azure Insights transaction search Trace](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/21873f199b7bafb68ea677ec41317b5aad0e959b/files/Insights-transaction_search_trace.png)
 
 This will allow to raise error, when user rejects final BOT proposal more than 3 times (in less than 30minutes).
 

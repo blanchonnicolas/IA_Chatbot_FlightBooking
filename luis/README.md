@@ -85,7 +85,7 @@ Library [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azur
 
 You will see the following when running the application:
 
-![Sample Outcome](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/73a68c0d106daea0dd8a357f0c011bf458ef5888/luis/Images/outcome.png)
+![Sample Outcome](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/4a23ac08ec9f2161dcf67850a0f62a214d050bc1/luis/Images/outcome2.png)
 
 ### More Information
 

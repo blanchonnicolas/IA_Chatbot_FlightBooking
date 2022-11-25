@@ -10,7 +10,11 @@ from botbuilder.core import MessageFactory, BotTelemetryClient, NullTelemetryCli
 from .cancel_and_help_dialog import CancelAndHelpDialog
 from .str_date_resolver_dialog import StrDateResolverDialog
 from .end_date_resolver_dialog import EndDateResolverDialog
+from botbuilder.schema import InputHints
+from custom_prompt_bot import CustomPromptBot
 
+# Create Bot
+BOT = CustomPromptBot(CONVERSATION_STATE, USER_STATE)
 
 class BookingDialog(CancelAndHelpDialog):
     """Flight booking implementation."""
@@ -134,7 +138,7 @@ class BookingDialog(CancelAndHelpDialog):
         booking_details.trip_duration = step_context.result
         # trip_duration = self.compute_trip_duration(booking_details.str_date, booking_details.end_date)
         
-        msg = (
+        confirm_prompt_texte = (
             f"Please confirm, I have you traveling to: { booking_details.destination } "
             f" taking off from: { booking_details.origin } "
             f" leaving on: { booking_details.str_date } "
@@ -142,8 +146,10 @@ class BookingDialog(CancelAndHelpDialog):
             f" for a total trip duration of : { booking_details.trip_duration } days "
             f" within a budget of : ${ booking_details.budget } "
         )
+        confirm_prompt_message = MessageFactory.text(confirm_prompt_texte, confirm_prompt_texte, input_hint=InputHints.ignoring_input)
+
         # Offer a YES/NO prompt.
-        return await step_context.prompt(ConfirmPrompt.__name__, PromptOptions(prompt=MessageFactory.text(msg)))
+        return await step_context.prompt(ConfirmPrompt.__name__, PromptOptions(prompt=confirm_prompt_message))
 
     async def final_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
         """Complete the interaction and end the dialog."""

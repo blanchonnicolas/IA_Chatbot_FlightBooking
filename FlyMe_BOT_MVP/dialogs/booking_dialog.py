@@ -11,10 +11,7 @@ from .cancel_and_help_dialog import CancelAndHelpDialog
 from .str_date_resolver_dialog import StrDateResolverDialog
 from .end_date_resolver_dialog import EndDateResolverDialog
 from botbuilder.schema import InputHints
-from custom_prompt_bot import CustomPromptBot
-
-# Create Bot
-BOT = CustomPromptBot(CONVERSATION_STATE, USER_STATE)
+#from custom_prompt_bot import CustomPromptBot
 
 class BookingDialog(CancelAndHelpDialog):
     """Flight booking implementation."""

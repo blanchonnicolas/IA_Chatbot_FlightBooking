@@ -28,11 +28,13 @@ This repository is part of a 3-repos project :
 
 ## More details here :
 
--   [Presentation](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot)
+-   [Presentation](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/main/p10_05_presentation.pdf)
 
--   [Vidéo]()
+-   [Operation docs](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/blob/main/p10_03_Methodologie%20pour%20le%20pilotage%20de%20la%20performance.pdf)
 
--   [Dataset](https://github.com/blanchonnicolas/IA_Project10_Openclassrooms_Chatbot/tree/main/dataset)
+-   [Vidéo](https://youtu.be/W6E27Cx1QmQ)
+
+-   [Dataset](https://www.microsoft.com/en-us/research/project/frames-dataset/)
 
 ## Main Repo content
 
